@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Carpintería</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Catálogo de Carpintería</h1>
+    <div id="catalogo"></div>
+
+    <div id="formulario-container" class="hidden">
+        <h2>Interesado en el producto</h2>
+        <form id="interes-form">
+            <input type="hidden" id="producto-id">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("http://localhost:3000/productos")
+                .then(response => response.json())
+                .then(data => {
+                    const catalogo = document.getElementById("catalogo");
+                    data.forEach(producto => {
+                        const div = document.createElement("div");
+                        div.classList.add("producto");
+                        div.innerHTML = `
+                            <h3>${producto.nombre}</h3>
+                            <p>${producto.descripcion}</p>
+                            <button onclick="mostrarFormulario('${producto._id}')">Me interesa</button>
+                        `;
+                        catalogo.appendChild(div);
+                    });
+                })
+                .catch(error => console.error("Error al obtener productos:", error));
+        });
+
+        function mostrarFormulario(id) {
+            document.getElementById("producto-id").value = id;
+            document.getElementById("formulario-container").classList.remove("hidden");
+        }
+
+        document.getElementById("interes-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const idProducto = document.getElementById("producto-id").value;
+            const nombre = document.getElementById("nombre").value;
+            const email = document.getElementById("email").value;
+
+            fetch("http://localhost:3000/interes", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ productoId: idProducto, nombre, email })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert("¡Tu interés ha sido registrado!");
+                document.getElementById("interes-form").reset();
+                document.getElementById("formulario-container").classList.add("hidden");
+            })
+            .catch(error => console.error("Error al enviar interés:", error));
+        });
+    </script>
+</body>
+</html>
