@@ -3,8 +3,10 @@
 <head>
   <title>KSM Carpintería</title>
   <meta charset="utf-8">
+  <meta name="description" content="KSM Carpintería: expertos en muebles a medida, closets, vestidores y cocinas. Calidad y diseño garantizados.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -12,82 +14,106 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" title="Toggle navigation">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
       <a class="navbar-brand" href="#myPage">KSM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#about">Nosotros</a></li>
-        <li><a href="#portfolio">Catálogo</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  </nav>
 
 <div class="jumbotron text-center">
   <h1 class="delineado-texto">KSM Carpintería</h1> 
   <p class="delineado-texto">Nos comprometemos con la calidad. Diseñamos, producimos e instalamos para ti.</p> 
   <a href="catalogo.html" class="btn btn-primary">Ver Catálogo</a>
+  <a href="#contact" class="btn btn-secondary">Contactar</a>  
 </div>
 
 <!-- Sección Nosotros -->
 <div id="about" class="container-fluid">
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-md-6">
       <h2>Sobre Nosotros</h2><br>
       <p>En KSM, somos apasionados por la madera y el arte de la carpintería. Con años de experiencia en el diseño y fabricación de muebles a medida, nos especializamos en crear piezas únicas que combinan funcionalidad, estilo y calidad.</p>
+      <a href="#portfolio" class="btn btn-primary">Ver Nuestros Trabajos</a>
     </div>
-    <div class="col-sm-4">
-      <img src="../img/assets/4.jpg" alt="Imagen sobre nosotros" class="img-responsive">
+    <div class="col-md-6">
+      <img src="../img/assets/4.jpg" alt="Imagen sobre nosotros" class="img-fluid">
     </div>
   </div>
 </div>
 
 <!-- Sección de Catálogo -->
-<div id="portfolio" class="container-fluid text-center bg-grey">
-  <h2>Catálogo</h2><br>
+<div id="portfolio" class="container text-center bg-light py-5">
+  <h2>Catálogo</h2>
   <h4>Explora nuestros trabajos y proyectos en carpintería.</h4>
-  <div class="image-row"> 
-    <div class="thumbnail">
-      <div class="text-content">
-        <p><strong>Cocinas</strong></p>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+    <div class="col">
+      <div class="card">
+        <img src="../img/assets/2.jpg" class="card-img-top" alt="Cocinas">
+        <div class="card-body">
+          <h5 class="card-title">Cocinas</h5>
+          <p class="card-text">Diseños modernos y funcionales para tu hogar.</p>
+          <a href="#" class="btn btn-primary">Ver más</a>
+        </div>
       </div>
-      <img src="../img/assets/2.jpg" alt="Cocinas">
     </div>
-    <div class="thumbnail">
-      <div class="text-content">
-        <p><strong>Closets</strong></p>
+
+    <div class="col">
+      <div class="card">
+        <img src="../img/assets/3.jpg" class="card-img-top" alt="Closets">
+        <div class="card-body">
+          <h5 class="card-title">Closets</h5>
+          <p class="card-text">Optimización de espacios con estilo y calidad.</p>
+          <a href="#" class="btn btn-primary">Ver más</a>
+        </div>
       </div>
-      <img src="../img/assets/2.jpg" alt="Closets">
     </div>
-    <div class="thumbnail">
-      <div class="text-content">
-        <p><strong>Vestidores</strong></p>
+
+    <div class="col">
+      <div class="card">
+        <img src="../img/assets/4.jpg" class="card-img-top" alt="Vestidores">
+        <div class="card-body">
+          <h5 class="card-title">Vestidores</h5>
+          <p class="card-text">Espacios diseñados para mayor comodidad.</p>
+          <a href="#" class="btn btn-primary">Ver más</a>
+        </div>
       </div>
-      <img src="../img/assets/2.jpg" alt="Vestidores">
     </div>
-    <div class="thumbnail">
-      <div class="text-content">
-        <p><strong>Muebles de baño</strong></p>
+
+    <div class="col">
+      <div class="card">
+        <img src="../img/assets/3.jpg" class="card-img-top" alt="Muebles de baño">
+        <div class="card-body">
+          <h5 class="card-title">Muebles de baño</h5>
+          <p class="card-text">Optimización de espacios con estilo y calidad.</p>
+          <a href="#" class="btn btn-primary">Ver más</a>
+        </div>
       </div>
-      <img src="../img/assets/2.jpg" alt="Muebles de baño">
     </div>
-    <div class="thumbnail">
-      <div class="text-content">
-        <p><strong>Muebles especiales</strong></p>
+
+    <div class="col">
+      <div class="card">
+        <img src="../img/assets/4.jpg" class="card-img-top" alt="Muebles especiales">
+        <div class="card-body">
+          <h5 class="card-title">Muebles especiales</h5>
+          <p class="card-text">Espacios diseñados para mayor comodidad.</p>
+          <a href="#" class="btn btn-primary">Ver más</a>
+        </div>
       </div>
-      <img src="../img/assets/2.jpg" alt="Muebles especiales">
     </div>
   </div>
 </div>
+
 
 <!-- Sección Contacto -->
 <div id="contact" class="container-fluid bg-grey">
@@ -95,9 +121,9 @@
   <div class="row">
     <div class="col-sm-5">
       <p>Estamos aquí para ayudarte.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Jojutla 322, Mitras Nte., Monterrey, N.L.</p>
-      <p><span class="glyphicon glyphicon-phone"></span> (81)1771-6378</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> contacto@kcmcocinas.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Jojutla 322, Mitras Nte., Monterrey, N.L.</p>
+      <p><i class="fas fa-phone"></i> (81) 1771-6378</p>
+      <p><i class="fas fa-envelope"></i> contacto@kcmcocinas.com</p>      
       <div class="social-icons">
         <a href="https://www.facebook.com/tu-pagina" target="_blank" rel="noopener" title="Facebook">
           <i class="fab fa-facebook-square"></i>
@@ -115,24 +141,21 @@
   <iframe 
   title="Google Maps Location"
   src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3593.032986486448!2d-100.39033122459932!3d25.769473977347044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDQ2JzEwLjEiTiAxMDDCsDIzJzE1LjkiVw!5e0!3m2!1sen!2smx" 
-  width="100%" 
-  height="500px" 
-  class="iframe-style" 
-  allowfullscreen="">
-  </iframe>
+  width="100%" height="500px" class="iframe-style">
+</iframe>
 </div>
 
-<footer class="footer">
+<footer class="bg-dark text-white text-center py-3">
   <div class="container">
-      <p>
-        <a>&copy; 2025 KSM. Todos los derechos reservados.</a>
-        <a href="#">Política de Privacidad</a> | 
-        <a href="#">Términos y Condiciones</a>
-      </p>
+    <p>&copy; 2025 KSM. Todos los derechos reservados.</p>
+    <a href="#" class="text-white mx-2">Política de Privacidad</a>
+    <a href="#" class="text-white mx-2">Términos y Condiciones</a>
+    
   </div>
 </footer>
 
-<!-- Incluye el archivo app.js -->
-<script src="/js/app.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer src="/js/app.js"></script>
 </body>
 </html>

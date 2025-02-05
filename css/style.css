@@ -115,7 +115,7 @@ body {
   }
   .navbar {
     margin-bottom: 0;
-    background-color: #80000c;
+    background-color: #80000c !important;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
