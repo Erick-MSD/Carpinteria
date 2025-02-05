@@ -1,376 +1,487 @@
 body {
-    font: 400 15px Lato, sans-serif;
-    line-height: 1.8;
-    color: #303030;
-  }
-  h2 {
-    font-size: 24px;
-    text-transform: uppercase;
-    color: #80000c;
-    font-weight: 600;
-    margin-bottom: 30px;
-  }
-  h4, p {
-    font-family: Lato, sans-serif; /* Asegura que ambos usen la misma fuente */
-    font-size: 18px; /* El tamaño de la fuente será el mismo */
-    line-height: 1.8; /* Mantén la misma altura de línea para un espaciado consistente */
-    color: #303030; /* Asegura que el color sea el mismo */
-  }
-  .jumbotron {
-    background-image: url('../img/assets/cocina1.png');
-    background-size: cover;  
-    background-position: center; 
-    background-repeat: no-repeat;
-    color: #fff;
-    padding: 100px 25px;
-    font-family: Montserrat, sans-serif;
-  }
-  .container-fluid {
-    padding: 60px 50px;
-  }
-  .bg-grey {
-    background-color: #f6f6f6;
-  }
-  .logo-small {
-    color: #80000c;
-    font-size: 50px;
-  }
-  .hard-work {
-    color: #303030;
-  }
-  .hard-work {
-    color: #303030;
-  }
-  .logo {
-    color: #80000c;
-    font-size: 200px;
-  }
-  .thumbnail {
-    padding: 0 0 15px 0;
-    border: none;
-    border-radius: 0;
-  }
-  .thumbnail img {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 10px;
-  }
-  .carousel-control.right, .carousel-control.left {
-    background-image: none;
-    color: #80000c;
-  }
-  .carousel-indicators li {
-    border-color: #56070c;
-  }
-  .carousel-indicators li.active {
-    background-color: #56070c;
-  }
-  .item h4 {
-    font-size: 19px;
-    line-height: 1.375em;
-    font-weight: 400;
-    font-style: italic;
-    margin: 70px 0;
-  }
-  .item span {
-    font-style: normal;
-  }
-  .panel {
-    border: 1px solid #56070c; 
-    border-radius:0 !important;
-    transition: box-shadow 0.5s;
-  }
-  .panel:hover {
-    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-  }
-  .panel-footer .btn:hover {
-    border: 1px solid #56070c;
-    background-color: #fff !important;
-    color: #56070c;
-  }
-  .panel-heading {
-    color: #fff !important;
-    background-color: #80000c !important;
-    padding: 25px;
-    border-bottom: 1px transparent;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
-  .panel-footer {
-    background-color: white !important;
-  }
-  .panel-footer h3 {
-    font-size: 32px;
-  }
-  .panel-footer h4 {
-    color: #aaa;
-    font-size: 14px;
-  }
-  .panel-footer .btn {
-    margin: 15px 0;
-    background-color: #80000c;
-    color: #fff;
-  }
-  .navbar {
-    margin-bottom: 0;
-    background-color: #80000c;
-    z-index: 9999;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 4px;
-    border-radius: 0;
-    font-family: Montserrat, sans-serif;
-  }
-  .navbar li a, .navbar .navbar-brand {
-    color: #fff !important;
-  }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #80000c; /* Resalta el color del texto */
-  }
-  .navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff !important;
-  }
-  footer .glyphicon {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color:#fff;
-  }
-  .slideanim {visibility:hidden;}
-  .slide {
-    -webkit-animation-name: slide;
-    animation-name: slide;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    visibility: visible;
-  }
-  @keyframes slide {
-    0% {
-      opacity: 0;
-      transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-  }
-  @-webkit-keyframes slide {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0%);
-    }
-  }
-  @media screen and (max-width: 768px) {
-    .col-sm-2 {
-      text-align: center;
-      margin: 15px 0;
-    }
-    .btn-lg {
-      width: 80%;
-      margin-bottom: 35px;
-    }
-  }
-  .w3-image {
-    width: 80%;
-  }
-  @media screen and (max-width: 480px) {
-    .logo {
-      font-size: 100px;
-    }
-  }
-  .full-width {
-    width: 80%;
-  }
-  /* Contenedor Flexbox para la fila de imágenes */
-  .image-row {
-    display: flex; /* Activa Flexbox */
-    flex-wrap: wrap; /* Permite que las imágenes se ajusten si no caben en una línea */
-    justify-content: space-between; /* Espaciado entre las imágenes */
-    gap: 20px; /* Espacio entre las imágenes */
-    padding: 10px 0; /* Espacio interno */
-    overflow-x: auto; /* Permite el desplazamiento horizontal si las imágenes no caben */
-  }
-  
-  /* Estilo de cada imagen */
-  .thumbnail {
-    display: flex;
-    flex-direction: column-reverse; /* Asegura que el texto esté encima de la imagen */
-    align-items: center;
-    text-align: center;
-    width: 18%; /* Ajusta el ancho de las imágenes */
-    min-width: 200px; /* Ancho mínimo para que las imágenes no se reduzcan demasiado */
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #ddd; /* Borde opcional */
-    border-radius: 5px; /* Bordes redondeados */
-  }
-  
-  .thumbnail img {
-    width: 100%;
-    height: 250px;  /* Establece una altura fija para las imágenes */
-    object-fit: cover;  /* Asegura que la imagen se recorte para llenar el contenedor sin distorsionarse */
-    transition: 0.3s ease-in-out;
-  }
-  
-  /* Si deseas que las imágenes no se estiren al pasar el cursor */
-  .thumbnail:hover img {
-    transform: scale(1.1);  /* Puedes ajustar este valor para controlar cuánto crecen */
-  }
-  
-  /* Efecto al pasar el cursor */
-  .thumbnail:hover::after {
-    opacity: 0.5; /* Capa semitransparente sobre la imagen */
-  }
-  
-  /* Contenido de texto dentro de la thumbnail */
-  .text-content {
-    padding: 10px; /* Espacio para que no quede pegado a la imagen */
-    z-index: 2; /* Asegura que el texto esté por encima de la imagen */
-    transition: transform 0.3s ease, color 0.3s ease; /* Transiciones para el texto */
-  }
-  
-  /* Resaltar el texto cuando se pasa el cursor */
-  .thumbnail:hover .text-content {
-    transform: scale(1.5); /* Aumenta ligeramente el tamaño del texto */
-    color: #000000; /* Cambia el color del texto a un tono más fuerte */
-  }
-  
-  /* Capa de color al pasar el cursor */
-  .thumbnail::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #800000; /* Color rojo oscuro */
+  font: 400 15px Lato, sans-serif;
+  line-height: 1.8;
+  color: #303030;
+}
+h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #80000c;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+h4, p {
+  font-family: Lato, sans-serif; /* Asegura que ambos usen la misma fuente */
+  font-size: 18px; /* El tamaño de la fuente será el mismo */
+  line-height: 1.8; /* Mantén la misma altura de línea para un espaciado consistente */
+  color: #303030; /* Asegura que el color sea el mismo */
+}
+.jumbotron {
+  background-image: url('../img/assets/cocinared.jpg');
+  background-size: cover;  
+  background-position: center; 
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 100px 25px;
+  font-family: Montserrat, sans-serif;
+}
+.container-fluid {
+  padding: 60px 50px;
+}
+.bg-grey {
+  background-color: #f6f6f6;
+}
+.bg-red {
+  background-color: #f6f6f6;
+}
+.logo-small {
+  color: #80000c;
+  font-size: 50px;
+}
+.hard-work {
+  color: rgb(252, 252, 252);
+}
+.hard-work {
+  color: #f9faf6;
+}
+.logo {
+  color: #80000c;
+  font-size: 200px;
+}
+.thumbnail {
+  padding: 0 0 15px 0;
+  border: none;
+  border-radius: 0;
+}
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+}
+.carousel-control.right, .carousel-control.left {
+  background-image: none;
+  color: #80000c;
+}
+.carousel-indicators li {
+  border-color: #56070c;
+}
+.carousel-indicators li.active {
+  background-color: #56070c;
+}
+.item h4 {
+  font-size: 19px;
+  line-height: 1.375em;
+  font-weight: 400;
+  font-style: italic;
+  margin: 70px 0;
+}
+.item span {
+  font-style: normal;
+}
+.panel {
+  border: 1px solid #56070c; 
+  border-radius:0 !important;
+  transition: box-shadow 0.5s;
+}
+.panel:hover {
+  box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}
+.panel-footer .btn:hover {
+  border: 1px solid #56070c;
+  background-color: #fff !important;
+  color: #56070c;
+}
+.panel-heading {
+  color: #fff !important;
+  background-color: #80000c !important;
+  padding: 25px;
+  border-bottom: 1px transparent;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.panel-footer {
+  background-color: white !important;
+}
+.panel-footer h3 {
+  font-size: 32px;
+}
+.panel-footer h4 {
+  color: #aaa;
+  font-size: 14px;
+}
+.panel-footer .btn {
+  margin: 15px 0;
+  background-color: #80000c;
+  color: #fff;
+}
+.navbar {
+  margin-bottom: 0;
+  background-color: #80000c;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0;
+  font-family: Montserrat, sans-serif;
+}
+.navbar li a, .navbar .navbar-brand {
+  color: #fff !important;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: #80000c; /* Resalta el color del texto */
+}
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: #fff !important;
+}
+footer .glyphicon {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color:#1d1111;
+}
+.slideanim {visibility:hidden;}
+.slide {
+  -webkit-animation-name: slide;
+  animation-name: slide;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  visibility: visible;
+}
+@keyframes slide {
+  0% {
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    z-index: 1; /* Asegura que el efecto cubra la imagen */
+    transform: translateY(70%);
+  } 
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
   }
-  
-  .social-icons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 20px;
+}
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%);
+  } 
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
   }
-  
-  .social-icons a {
-    text-decoration: none;
-    font-size: 30px;
-    color: #000; /* Color de los iconos */
-    transition: color 0.3s;
-  }
-  
-  .social-icons a:hover {
-    color: #007bff; /* Cambia de color al pasar el mouse */
-  }
-  /* Estilo para el texto con borde negro */
-  .delineado-texto {
-    font-size: 24px; /* Ajusta el tamaño del texto */
-    color: #fff; /* El color principal del texto */
-    text-shadow: 
-      1px 1px 0px #000,  /* Sombra en la parte inferior derecha */
-      -1px -1px 0px #000, /* Sombra en la parte superior izquierda */
-      1px -1px 0px #000,  /* Sombra en la parte inferior izquierda */
-      -1px 1px 0px #000;  /* Sombra en la parte superior derecha */
-  }
-  /* Ajuste para los iconos de redes sociales */
-  .social-icons {
-    display: block;  /* Asegura que los iconos estén en una nueva línea */
-    margin-top: 10px; /* Añade espacio entre el correo y los iconos */
-    text-align: left; /* Alinea los iconos a la izquierda */
-    padding-left: 20px; /* Agrega un pequeño margen desde la izquierda */
-  }
-  
-  .social-icons a {
-    margin: 0 10px; /* Espacio entre los iconos */
-    display: inline-block; /* Asegura que los iconos se alineen en línea */
-  }
-  
-  .social-icons i {
-    font-size: 30px; /* Tamaño de los iconos */
-    color: #3b5998; /* Color por defecto para Facebook */
-  }
-  
-  .social-icons .instagram i {
-    color: #E1306C; /* Color para Instagram */
-  }
-  
-  #map-container {
-    width: 100%;
-    max-width: 1200px; /* Ajusta esto según el diseño */
-    margin: 0 auto; /* Centra el mapa */
-    padding: 20px 0;
-  }
-  
-  /* Estilo para que el mapa ocupe bien el espacio disponible */
-  #map-container iframe {
-    width: 100%;
-    height: 500px;
-    border-radius: 10px; /* Bordes redondeados opcionales */
-    box-shadow: 0px 4px 8px rgba(248, 248, 248, 0.2);
-  }
-  
-  /* Ajuste para pantallas pequeñas */
-  @media screen and (max-width: 768px) {
-    #map-container iframe {
-        height: 350px; /* Reducir el tamaño en móviles */
-    }
-  }
-  
-  .footer {
-    background-color: #80000c; /* Color de fondo */
-    color: #fff; /* Color de texto */
+}
+@media screen and (max-width: 768px) {
+  .col-sm-2 {
     text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
+    margin: 15px 0;
   }
-  
-  .footer a {
-    color: #fff;
+  .btn-lg {
+    width: 80%;
+    margin-bottom: 35px;
+  }
+}
+.w3-image {
+  width: 80%;
+}
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: 100px;
+  }
+}
+.full-width {
+  width: 80%;
+}
+/* Contenedor Flexbox para la fila de imágenes */
+.image-row {
+  display: flex; /* Activa Flexbox */
+  flex-wrap: wrap; /* Permite que las imágenes se ajusten si no caben en una línea */
+  justify-content: space-between; /* Espaciado entre las imágenes */
+  gap: 20px; /* Espacio entre las imágenes */
+  padding: 10px 0; /* Espacio interno */
+  overflow-x: auto; /* Permite el desplazamiento horizontal si las imágenes no caben */
+}
+
+/* Estilo de cada imagen */
+.thumbnail {
+  display: flex;
+  flex-direction: column-reverse; /* Asegura que el texto esté encima de la imagen */
+  align-items: center;
+  text-align: center;
+  width: 18%; /* Ajusta el ancho de las imágenes */
+  min-width: 200px; /* Ancho mínimo para que las imágenes no se reduzcan demasiado */
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ddd; /* Borde opcional */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 250px;  /* Establece una altura fija para las imágenes */
+  object-fit: cover;  /* Asegura que la imagen se recorte para llenar el contenedor sin distorsionarse */
+  transition: 0.3s ease-in-out;
+}
+
+/* Si deseas que las imágenes no se estiren al pasar el cursor */
+.thumbnail:hover img {
+  transform: scale(1.1);  /* Puedes ajustar este valor para controlar cuánto crecen */
+}
+
+/* Efecto al pasar el cursor */
+.thumbnail:hover::after {
+  opacity: 0.5; /* Capa semitransparente sobre la imagen */
+}
+
+/* Contenido de texto dentro de la thumbnail */
+.text-content {
+  padding: 10px; /* Espacio para que no quede pegado a la imagen */
+  z-index: 2; /* Asegura que el texto esté por encima de la imagen */
+  transition: transform 0.3s ease, color 0.3s ease; /* Transiciones para el texto */
+}
+
+/* Resaltar el texto cuando se pasa el cursor */
+.thumbnail:hover .text-content {
+  transform: scale(1.5); /* Aumenta ligeramente el tamaño del texto */
+  color: #000000; /* Cambia el color del texto a un tono más fuerte */
+}
+
+/* Capa de color al pasar el cursor */
+.thumbnail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #800000; /* Color rojo oscuro */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1; /* Asegura que el efecto cubra la imagen */
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 30px;
+  color: #000; /* Color de los iconos */
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff; /* Cambia de color al pasar el mouse */
+}
+/* Estilo para el texto con borde negro */
+.delineado-texto {
+  font-size: 24px; /* Ajusta el tamaño del texto */
+  color: #fff; /* El color principal del texto */
+  text-shadow: 
+    1px 1px 0px #000,  /* Sombra en la parte inferior derecha */
+    -1px -1px 0px #000, /* Sombra en la parte superior izquierda */
+    1px -1px 0px #000,  /* Sombra en la parte inferior izquierda */
+    -1px 1px 0px #000;  /* Sombra en la parte superior derecha */
+}
+/* Ajuste para los iconos de redes sociales */
+.social-icons {
+  display: block;  /* Asegura que los iconos estén en una nueva línea */
+  margin-top: 10px; /* Añade espacio entre el correo y los iconos */
+  text-align: left; /* Alinea los iconos a la izquierda */
+  padding-left: 20px; /* Agrega un pequeño margen desde la izquierda */
+}
+
+.social-icons a {
+  margin: 0 10px; /* Espacio entre los iconos */
+  display: inline-block; /* Asegura que los iconos se alineen en línea */
+}
+
+.social-icons i {
+  font-size: 30px; /* Tamaño de los iconos */
+  color: #3b5998; /* Color por defecto para Facebook */
+}
+
+.social-icons .instagram i {
+  color: #E1306C; /* Color para Instagram */
+}
+
+#map-container {
+  width: 100%;
+  max-width: 1200px; /* Ajusta esto según el diseño */
+  margin: 0 auto; /* Centra el mapa */
+  padding: 20px 0;
+}
+
+/* Estilo para que el mapa ocupe bien el espacio disponible */
+#map-container iframe {
+  width: 100%;
+  height: 500px;
+  border-radius: 10px; /* Bordes redondeados opcionales */
+  box-shadow: 0px 4px 8px rgba(248, 248, 248, 0.2);
+}
+
+/* Ajuste para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  #map-container iframe {
+      height: 350px; /* Reducir el tamaño en móviles */
+  }
+}
+
+.footer {
+  background-color: #80000c; /* Color de fondo */
+  color: #fff; /* Color de texto */
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffcccb; /* Cambio de color al pasar el mouse */
+}
+
+/* Ajuste para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .footer {
+      font-size: 12px;
+      padding: 15px 10px;
+  }
+}
+/* Estilo para los enlaces del menú */
+.menu li a:hover {
+  color: #80000c; /* Cambia a un color más fuerte o diferente para el texto */
+  text-decoration: underline; /* Puedes añadir un subrayado si lo prefieres */
+}
+/* Estilo para las letras activas */
+.menu li.active a {
+  color: #80000c; /* Cambia el color del texto cuando está activo */
+  font-weight: bold; /* O puedes hacerlo más grueso */
+  text-decoration: none; /* Si no quieres subrayado o algún otro estilo */
+}
+
+/* Elimina la línea de fondo cuando el ítem es activo */
+.menu li.active::after {
+  content: none;
+}
+/* Resaltar solo el texto al pasar el ratón */
+.menu li a:hover {
+  background-color: transparent; /* Sin fondo */
+  color: #80000c; /* Resalta el color del texto */
+}
+/* Estilos para el nuevo menú superior */
+.top-menu {
+  background-color: #645c5c; /* Color de fondo */
+  color: #fff; /* Color de texto */
+  padding: 10px 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+}
+
+.top-menu .welcome-text {
+  margin: 0;
+  line-height: 30px; /* Alinea verticalmente el texto */
+}
+
+.top-menu .contact-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px; /* Espacio entre elementos */
+}
+
+.top-menu .contact-info span {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Espacio entre icono y texto */
+}
+
+.top-menu .contact-info i {
+  font-size: 16px; /* Tamaño de los iconos */
+}
+
+.top-menu .social-icons a {
+  color: #fff; /* Color de los iconos */
+  font-size: 18px; /* Tamaño de los iconos */
+  transition: color 0.3s ease;
+}
+
+.top-menu .social-icons a:hover {
+  color: #ffcccb; /* Cambio de color al pasar el mouse */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .top-menu .contact-info {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+  }
+
+  .top-menu .welcome-text {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+  /* Estilos para el nuevo menú superior */
+  .top-bar {
+    background-color: #80000c;
+    color: white;
+    padding: 5px 0; /* Reducir la altura */
+    font-size: 12px; /* Hacerlo más pequeño */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1030; /* Mayor que el navbar */
+  }
+
+  .top-bar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacia los elementos */
+  }
+
+  .top-bar .left {
+    margin-left: 0; /* Asegura que el texto esté a la izquierda */
+    flex-grow: 1; /* Ocupa el espacio disponible */
+    text-align: left;
+    padding-left: 15px; /* Asegura margen del container */
+  }
+
+  .top-bar .right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Asegura que los contactos estén a la derecha */
+    flex-grow: 1;
+    text-align: right;
+    padding-right: 15px;
+  }
+
+  .top-bar span, .top-bar a {
+    color: white;
+    margin: 0 8px; /* Espaciado entre elementos */
     text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s ease;
   }
-  
-  .footer a:hover {
-    color: #ffcccb; /* Cambio de color al pasar el mouse */
+
+  .top-bar a:hover {
+    text-decoration: underline;
   }
-  
-  /* Ajuste para pantallas pequeñas */
-  @media screen and (max-width: 768px) {
-    .footer {
-        font-size: 12px;
-        padding: 15px 10px;
-    }
+
+  /* Ajuste del navbar principal */
+  .navbar {
+    top: 30px; /* Ajustar el navbar para que no se solape */
   }
-  /* Estilo para los enlaces del menú */
-  .menu li a:hover {
-    color: #80000c; /* Cambia a un color más fuerte o diferente para el texto */
-    text-decoration: underline; /* Puedes añadir un subrayado si lo prefieres */
-  }
-  /* Estilo para las letras activas */
-  .menu li.active a {
-    color: #80000c; /* Cambia el color del texto cuando está activo */
-    font-weight: bold; /* O puedes hacerlo más grueso */
-    text-decoration: none; /* Si no quieres subrayado o algún otro estilo */
-  }
-  
-  /* Elimina la línea de fondo cuando el ítem es activo */
-  .menu li.active::after {
-    content: none;
-  }
-  /* Resaltar solo el texto al pasar el ratón */
-  .menu li a:hover {
-    background-color: transparent; /* Sin fondo */
-    color: #80000c; /* Resalta el color del texto */
+
+  /* Ajustar contenido para evitar solapamiento */
+  body {
+    padding-top: 80px; /* Espacio extra para evitar que el contenido quede oculto */
   }
