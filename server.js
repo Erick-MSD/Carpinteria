@@ -14,11 +14,20 @@ const db = mysql.createPool({
   host: 'localhost',
   user: 'root',
   password: 'Erick1234',
-  database: 'Carpinteria',
+  database: 'login',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
 });
+
+db.getConnection()
+  .then(connection => {
+    console.log('✅ Conectado a MySQL');
+    connection.release();
+  })
+  .catch(err => {
+    console.error('❌ Error de conexión a MySQL:', err);
+  });
 
 // Servir archivos estáticos
 app.use('/css', express.static(path.join(__dirname, 'css')));
