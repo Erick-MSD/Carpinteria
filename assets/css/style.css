@@ -41,7 +41,7 @@ h4, p {
    ====================== */
 .jumbotron {
   position: relative;
-  background-image: url('../img/assets/cocinared.jpg');
+  background-image: url('../img/cocinared.jpg');
   background-size: cover;
   background-position: center;
   color: var(--white);
