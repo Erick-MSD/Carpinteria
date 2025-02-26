@@ -52,7 +52,7 @@ app.use('/html', express.static(path.join(__dirname, 'html')));
 
 // Servir el archivo login.html
 app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'html', 'login.html'));
+  res.sendFile(path.join(__dirname, 'login.html'));
 });
 
 app.get('/', (req, res) => {
