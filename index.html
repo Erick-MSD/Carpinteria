@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="ksmApp">
 <head>
   <title>KSM Carpintería</title>
   <meta charset="utf-8">
@@ -9,14 +9,21 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
   <link href="./assets/css/style.css" rel="stylesheet">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
 
+  <link href="./assets/css/gallery.css" rel="stylesheet">
+  <script src="./assets/js/yetii-min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" ng-controller="MainController">
 
 <!-- Menú superior fijo -->
 <div class="top-bar">
@@ -64,112 +71,192 @@
 <!-- Container (Portfolio Section) -->
 <div id="portfolio" class="container-fluid text-center bg-grey">
   <h2>Catalogo</h2><br>
-  <h4>En esta seccion encontras nuestro catalogo de trabajos para que puedas ver nuestra experiencia</h4>
-  <div class="image-row"> <!-- Contenedor Flexbox -->
-    <div class="thumbnail">
+  <h4>En esta sección encontrarás nuestro catálogo de trabajos para que puedas ver nuestra experiencia</h4>
+  
+  <div class="image-row" ng-show="!showGallery"> 
+    <div class="thumbnail" ng-repeat="category in categories" ng-click="showCategoryGallery(category)">
       <div class="text-content">
-        <p><strong>Cocinas</strong></p>
+        <p><strong>{{category.name}}</strong></p>
       </div>
-      <img src="./assets/img/cocina.jpg" alt="Paris">
+      <img ng-src="{{category.thumbnail}}" alt="{{category.name}}">
     </div>
+  </div>
 
-    <div class="thumbnail">
-      <div class="text-content">
-        <p><strong>Closets</strong></p>
+  <!-- Galería de las categorías -->
+  
+  <div class="gallery-container" ng-show="showGallery">
+    <div class="row">
+      <div class="col-xs-12">
+        <button class="btn btn-default back-button" ng-click="backToCategories()">
+          <i class="fas fa-arrow-left"></i> Regresar a las Categorias
+        </button>
+        <h3 class="gallery-title">{{selectedCategory.name}}</h3>
       </div>
-      <img src="./assets/img/closet.jpg" alt="Paris">
     </div>
-
-    <div class="thumbnail">
-      <div class="text-content">
-        <p><strong>Vestidores</strong></p>
+    
+    <div id="gallery-container-{{selectedCategory.id}}" class="row gallery-content">
+      <div class="col-md-8">
+        <div class="tab" ng-repeat="image in selectedCategory.images" id="tab{{$index+1}}" ng-class="{'active-tab': $index === 0}"> 
+          <a href="javascript:galleryTabber.next()" title="Click para ver la siguiente imagen">
+            <img ng-src="{{image.full}}" alt="{{image.title}}" />
+          </a>
+          <p class="info"> 
+            <strong>{{image.title}}</strong> 
+            {{image.description}} 
+          </p>
+        </div>
       </div>
-      <img src="./assets/img/baño.jpg" alt="Paris">
-    </div>
-
-    <div class="thumbnail">
-      <div class="text-content">
-        <p><strong>Muebles de baño</strong></p>
+      
+      <div class="col-md-4">
+        <ul id="gallery-container-{{selectedCategory.id}}-nav" class="gallery-nav">
+          <li ng-repeat="image in selectedCategory.images">
+            <a href="#tab{{$index+1}}" ng-class="{'active': $index === 0}">
+              <img ng-src="{{image.thumb}}" alt="{{image.title}}" />
+            </a>
+          </li>
+        </ul>
+        
+        <div class="gallery-info">
+          <h4>{{selectedCategory.name}}</h4>
+          <p>{{selectedCategory.description}}</p>
+        </div>
       </div>
-      <img src="./assets/img/baño.jpg" alt="Paris">
-    </div>
-
-    <div class="thumbnail">
-      <div class="text-content">
-        <p><strong>Muebles especiales</strong></p>
-      </div>
-      <img src="./assets/img/mueble esp.jpg" alt="Paris">
     </div>
   </div>
 </div>
-  </div><br>
-  
-<!-- Mapa -->
-<div class="map-section">
-  <div id="map-container">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3593.032986486448!2d-100.39033122459932!3d25.769473977347044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDQ2JzEwLjEiTiAxMDDCsDIzJzE1LjkiVw!5e0!3m2!1sen!2smx!4v1738535201727!5m2!1sen!2smx"
-      title="Google Maps Location"
-      width="100%" 
-      height="500px" 
-      class="iframe-style" 
-      allowfullscreen="">
-    </iframe>
+
+<!-- Container (About Section) -->
+<div id="Conocenos" class="container-fluid text-center">
+  <h2>Conócenos</h2><br>
+  <div class="features-container">
+    <div class="feature-item">
+      <div class="feature-icon">
+        <i class="fa fa-calendar"></i>
+      </div>
+      <p>Sólo con reserva concertada</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">
+        <i class="fa fa-star"></i>
+      </div>
+      <p>Presupuesto sin compromiso</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">
+        <i class="fa fa-clock-o"></i>
+      </div>
+      <p>Horario Lunes a Viernes de 8:30 a 18:30</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">
+        <i class="fa fa-comments"></i>
+      </div>
+      <p>Consulta gratuita</p>
+    </div>
   </div>
 </div>
-  
+
+<!-- Container (Contact Section) --> 
 <div id="contact" class="container-fluid bg-red">
-  <h2 class="text-center">CONTACTOS</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Contáctanos</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Jojutla 322, Mitras Nte., 64180 Monterrey, N.L.</p>
-      <p><span class="glyphicon glyphicon-phone"></span> (81) 1771-6378</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> contacto@kcmcocinas.com</p>
+<h2 class="text-center">CONTACTANOS</h2>
+<div class="row">
+  <div class="col-sm-4">
+    <h3 class="contact-title">Contactos</h3>
+    <div class="contact-info-box">
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt contact-icon"></i>
+        <div class="contact-text">Jojutla 322, Mitras Nte., 64180 Monterrey, N.L.</div>
+      </div>
+      
+      <div class="contact-item">
+        <i class="fas fa-phone-alt contact-icon"></i>
+        <div class="contact-text">(81) 1771-6378</div>
+      </div>
+      
+      <div class="contact-item">
+        <i class="fas fa-envelope contact-icon"></i>
+        <div class="contact-text">contacto@kcmcocinas.com</div>
+      </div>
+    </div>
 
-      <!-- Contenedor para los iconos de redes sociales -->
+    <!-- Contenedor para los iconos de redes sociales mejorado -->
+    <div class="social-box">
+      <h4 class="social-title">Síguenos en redes sociales</h4>
       <div class="social-icons-contact">
-        <a href="https://www.facebook.com/kcmcocinas/" target="_blank" rel="noopener" title="Facebook">
+        <a href="https://www.facebook.com/kcmcocinas/" target="_blank" rel="noopener" title="Facebook" class="social-link">
           <i class="fab fa-facebook-square"></i>
         </a>
-        <a href="https://www.instagram.com/kcm.cocinas/" target="_blank" rel="noopener" class="instagram" title="Instagram">
+        <a href="https://www.instagram.com/kcm.cocinas/" target="_blank" rel="noopener" class="social-link" title="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
       </div>
     </div>
+  </div>
 
-    <div class="col-sm-7 slideanim">
+  <!-- Columna derecha para el formulario -->
+  <div class="col-md-7 contact-form-container">
+    <p>Se enviará un email al negocio</p>
+    
+    <form class="contact-form">
       <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Nombre" type="text" required>
+        <div class="col-md-6">
+          <div class="form-group">
+            <textarea class="form-control" id="message" name="message" placeholder="Que ocupas" type="text" required></textarea>
+          </div>
         </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input class="form-control" id="name" name="name" placeholder="Tu nombre" type="text" required>
+          </div>
+          
+          <div class="form-group">
+            <input class="form-control" id="email" name="email" placeholder="Tu email" type="email" required>
+          </div>
+          
+          <div class="form-group">
+            <input class="form-control" id="phone" name="phone" placeholder="Número de teléfono" type="tel">
+          </div>
         </div>
       </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Dejanos un comentario" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Enviar</button>
-        </div>
+      
+      <div class="checkbox-container">
+        <input type="checkbox" id="terms" name="terms">
+        <label for="terms">Al avanzar estoy de acuerdo con <a href="#">Términos y Condiciones</a> y <a href="#">Política de Privacidad</a> de UENI y cualesquier términos y condiciones aplicables de Woodplace Carpintería. Este sitio está protegido por reCAPTCHA y las <a href="#">Políticas de privacidad</a> y <a href="#">Términos del servicio</a> de Google aplican.</label>
       </div>
-    </div>
+      
+      <div class="text-center">
+        <button class="btn btn-primary send-btn" type="submit">Enviar Mensaje</button>
+      </div>
+    </form>
   </div>
 </div>
-  
+</div>
 
-  <footer class="footer">
-    <div class="container">
-        <p>
-          <a>Copyright®2025 por KSM. Todos los derechos reservados.</a>
-            <a>Política de Privacidad</a> | 
-            <a>Términos y Condiciones</a> | 
-        </p>
-    </div>
+<!-- Mapa -->
+<div class="map-section">
+<div id="map-container">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3593.032986486448!2d-100.39033122459932!3d25.769473977347044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDQ2JzEwLjEiTiAxMDDCsDIzJzE1LjkiVw!5e0!3m2!1sen!2smx"
+    allowfullscreen="" 
+    title="Google Maps">
+  </iframe>
+</div>
+</section>
+
+</div>
+<footer class="footer">
+  <div class="container">
+      <p>
+        <a>Copyright®2025 por KSM. Todos los derechos reservados.</a>
+          <a>Política de Privacidad</a> | 
+          <a>Términos y Condiciones</a> | 
+      </p>
+  </div>
 </footer>
 
 <!-- Incluye el archivo app.js -->
 <script src="./assets/js/app.js"></script>
+<script src="./assets/js/gallery-app.js"></script>
 
 </body>
 </html>

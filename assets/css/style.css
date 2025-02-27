@@ -15,8 +15,8 @@
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
     color: #303030;
-    background-color: #f6f6f6; /* Fondo de la página */
-    margin: 0; /* Eliminar márgenes predeterminados */
+    background-color: #f6f6f6; /* Fondo de la página */
+    margin: 0; /* Eliminar márgenes predeterminados */
     padding: 0; /* Eliminar paddings predeterminados */
   }
   
@@ -82,21 +82,21 @@ h4, p {
    #portfolio {
     background-color: #f6f6f6; /* Fondo gris claro */
     padding: 60px 50px;
-    margin: 0; /* Eliminar márgenes */
+    margin: 0; /* Eliminar márgenes */
   }
   
   .image-row {
     display: flex;
-    flex-wrap: nowrap; /* Evita que las imágenes se envuelvan a la siguiente línea */
-    justify-content: space-between; /* Espacio uniforme entre las imágenes */
-    gap: 15px; /* Espacio entre las imágenes */
+    flex-wrap: nowrap; /* Evita que las imágenes se envuelvan a la siguiente línea */
+    justify-content: space-between; /* Espacio uniforme entre las imágenes */
+    gap: 15px; /* Espacio entre las imágenes */
     padding: 10px 0;
     overflow-x: auto; /* Permite el desplazamiento horizontal si no caben */
   }
   
   .thumbnail {
     flex: 1 1 calc(20% - 15px); /* Cada imagen ocupa el 20% del contenedor menos el espacio del gap */
-    min-width: 200px; /* Ancho mínimo para evitar que las imágenes se hagan demasiado pequeñas */
+    min-width: 200px; /* Ancho mínimo para evitar que las imágenes se hagan demasiado pequeñas */
     display: flex;
     flex-direction: column-reverse; /* Texto encima de la imagen */
     align-items: center;
@@ -110,7 +110,7 @@ h4, p {
   
   .thumbnail img {
     width: 100%;
-    height: 250px; /* Altura fija para las imágenes */
+    height: 250px; /* Altura fija para las imágenes */
     object-fit: cover; /* Asegura que la imagen se recorte para llenar el contenedor sin distorsionarse */
     transition: 0.3s ease-in-out;
   }
@@ -121,49 +121,212 @@ h4, p {
   
   .text-content {
     padding: 10px; /* Espacio para que no quede pegado a la imagen */
-    z-index: 2; /* Asegura que el texto esté por encima de la imagen */
+    z-index: 2; /* Asegura que el texto esté por encima de la imagen */
     transition: transform 0.3s ease, color 0.3s ease;
   }
   
   .thumbnail:hover .text-content {
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño del texto */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del texto */
     color: #80000c; /* Cambia el color del texto al pasar el cursor */
   }
 
 /* ======================
-   Contact Section
+   Contact Section Mejorado
    ====================== */
    #contact {
-    background-color: #590008; /* Color de fondo */
+    background-color: #590008;
     padding: 60px 50px;
-    color: white; /* Color de texto */
+    color: white;
   }
   
   #contact h2 {
-    color: white; /* Color del título */
+    color: white;
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
   }
   
-  #contact p,
-  #contact .glyphicon {
-    color: white; /* Color del texto y los íconos */
+  /* Estilos específicos para la sección de contactos */
+  .contact-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+  
+  .contact-info-box {
+    background-color: #590008;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .contact-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .contact-icon {
+    font-size: 24px;
+    color: white;
+    margin-right: 15px;
+    margin-top: 3px;
+  }
+  
+  .contact-text {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+  
+  /* Estilos para la sección de redes sociales */
+  .social-box {
+    background-color: #590008;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .social-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-style: white;
   }
   
   .social-icons-contact {
     display: flex;
-    gap: 15px; /* Espacio entre íconos */
-    margin-top: 10px; /* Espacio entre el correo y los íconos */
+    gap: 15px;
   }
   
-  .social-icons-contact a {
-    color: white; /* Color de los íconos */
-    font-size: 24px; /* Tamaño de los íconos */
-    transition: color 0.3s ease;
+  .social-link {
+    color: white;
+    font-size: 32px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #590008;
   }
   
-  .social-icons-contact a:hover {
-    color: #ffcccb; /* Cambio de color al pasar el mouse */
+  .social-link:hover {
+    background-color: #ff9933;
+    transform: translateY(-3px);
   }
-
+  
+  /* Estilos para el formulario */
+  .contact-form {
+    background-color: #590008;
+    padding: 25px;
+    border-radius: 8px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px;
+    height: auto;
+    font-size: 16px;
+    width: 100%;
+    background-color: white;
+  }
+  
+  textarea.form-control {
+    height: 100%;
+    min-height: 158px;
+    resize: none;
+  }
+  
+  /* Estilos para el checkbox */
+  .form-check {
+    padding-left: 25px;
+  }
+  
+  .form-check-input {
+    margin-left: -25px;
+    margin-top: 5px;
+  }
+  
+  .form-check-label {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .form-check-label a {
+    color: #ff9933;
+    text-decoration: none;
+  }
+  
+  /* Botón de envío */
+  .btn-send {
+    background-color: #ff9933;
+    border: none;
+    color: white;
+    padding: 12px 40px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: all 0.3s;
+  }
+  
+  .btn-send:hover {
+    background-color: #ff8c1a;
+    transform: translateY(-2px);
+  }
+  
+  /* Media queries para responsividad */
+  @media (max-width: 992px) {
+    #contact {
+      padding: 50px 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #contact {
+      padding: 40px 20px;
+    }
+    
+    .contact-info-box, .social-box {
+      margin-bottom: 20px;
+    }
+    
+    .contact-title {
+      font-size: 24px;
+    }
+    
+    .contact-text {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .contact-icon {
+      font-size: 20px;
+    }
+    
+    .social-link {
+      width: 45px;
+      height: 45px;
+      font-size: 28px;
+    }
+  }
 /* ======================
    Footer
    ====================== */
@@ -193,7 +356,7 @@ h4, p {
     background-color: #590008; /* Color rojo oscuro */
     color: white;
     padding: 5px 0; /* Altura reducida */
-    font-size: 12px; /* Tamaño de fuente reducido */
+    font-size: 12px; /* Tamaño de fuente reducido */
     position: fixed;
     width: 100%;
     top: 0;
@@ -211,7 +374,7 @@ h4, p {
   }
   
   .top-bar .left {
-    margin-left: 0; /* Asegura que el texto esté a la izquierda */
+    margin-left: 0; /* Asegura que el texto esté a la izquierda */
     flex-grow: 1; /* Ocupa el espacio disponible */
     text-align: left;
     padding-left: 15px; /* Asegura margen del container */
@@ -220,7 +383,7 @@ h4, p {
   .top-bar .right {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Asegura que los contactos estén a la derecha */
+    justify-content: flex-end; /* Asegura que los contactos estén a la derecha */
     flex-grow: 1;
     text-align: right;
     padding-right: 15px;
@@ -239,10 +402,10 @@ h4, p {
   
   
 /* ======================
-   Navbar (Menú principal)
+   Navbar (Menú principal)
    ====================== */
    .navbar {
-    background-color: #80000c; /* Color rojo más claro */
+    background-color: #80000c; /* Color rojo más claro */
     margin-bottom: 0;
     border: 0;
     font-size: 12px !important;
@@ -251,7 +414,7 @@ h4, p {
     border-radius: 0;
     font-family: Montserrat, sans-serif;
     position: fixed;
-    top: 30px; /* Ajuste para que esté justo debajo del top-bar */
+    top: 30px; /* Ajuste para que esté justo debajo del top-bar */
     width: 100%;
     z-index: 1020;
   }
@@ -267,26 +430,39 @@ h4, p {
   }
   
 /* ======================
-   Sección del mapa
+   Sección del mapa
    ====================== */
    .map-section {
-    background-color: #f6f6f6; /* Fondo gris claro */
-    padding: 40px 0; /* Espaciado interno */
+    background-color: #590008;
+    padding: 40px 0;
+    width: 100%;
   }
   
   #map-container {
-    max-width: 1200px; /* Ancho máximo del mapa */
-    width: 90%; /* Ancho relativo */
-    margin: 0 auto; /* Centrar el mapa */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    border-radius: 10px; /* Bordes redondeados */
-    overflow: hidden; /* Evita que el iframe sobresalga */
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
   }
   
   #map-container iframe {
-    width: 100%;
-    height: 400px; /* Altura del mapa */
-    border: none; /* Elimina el borde del iframe */
+    width: 100%; /* Cambiado de 60% a 100% para ocupar todo el ancho del contenedor */
+    height: 400px; /* Aumenté un poco la altura para mejor visualización */
+    border: none;
+    display: block; /* Asegura que no haya espacios extra */
+  }
+  
+  /* Para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    #map-container {
+      width: 95%;
+    }
+    
+    #map-container iframe {
+      height: 300px;
+    }
   }
 
   /* ======================
@@ -300,11 +476,84 @@ h4, p {
     }
   
     .navbar {
-      top: 80px; /* Ajuste para móviles */
+      top: 80px; /* Ajuste para móviles */
     }
   
     #map-container {
-      width: 95%; /* Más ancho en móviles */
-      margin-top: 120px; /* Más margen superior en móviles */
+      width: 95%; /* Más ancho en móviles */
+      margin-top: 120px; /* Más margen superior en móviles */
     }
   }
+
+/* Sección Conócenos */
+#Conocenos {
+  padding: 60px 20px;
+  background-color: #f6f6f6;
+}
+
+#Conocenos h2 {
+  color: #333;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  margin-bottom: 15px;
+}
+
+.feature-icon i {
+  font-size: 24px;
+  color: #333;
+}
+
+.feature-item p {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+#Conocenos {
+  margin-top: -60px; /* Ajusta este valor para acercar la sección */
+  position: relative; /* Asegura que se posicione correctamente */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .features-container {
+    gap: 15px;
+  }
+  
+  .feature-item {
+    width: 150px;
+  }
+  
+  .feature-icon {
+    width: 70px;
+    height: 70px;
+  }
+}
