@@ -52,10 +52,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#about">Nosotros</a></li>
+        <li><a href="/servicios.html">Conocenos</a></li>
         <li><a href="#portfolio">Catalogo</a></li>
         <li><a href="#contact">Contacto</a></li>
-        <li><a href="./login.html">Iniciar Sesión</a></li>
+        <li><a href="login.html">Iniciar Sesión</a></li>
       </ul>
     </div>
   </div>
@@ -81,9 +81,7 @@
       <img ng-src="{{category.thumbnail}}" alt="{{category.name}}">
     </div>
   </div>
-
   <!-- Galería de las categorías -->
-  
   <div class="gallery-container" ng-show="showGallery">
     <div class="row">
       <div class="col-xs-12">
@@ -96,8 +94,8 @@
     
     <div id="gallery-container-{{selectedCategory.id}}" class="row gallery-content">
       <div class="col-md-8">
-        <div class="tab" ng-repeat="image in selectedCategory.images" id="tab{{$index+1}}" ng-class="{'active-tab': $index === 0}"> 
-          <a href="javascript:galleryTabber.next()" title="Click para ver la siguiente imagen">
+        <div class="tab" ng-repeat="image in selectedCategory.images" id="tab{{$index+1}}" ng-class="{'active-tab': $index === currentImageIndex}"> 
+          <a href="javascript:void(0)" ng-click="nextImage()" title="Click para ver la siguiente imagen">
             <img ng-src="{{image.full}}" alt="{{image.title}}" />
           </a>
           <p class="info"> 
@@ -110,8 +108,8 @@
       <div class="col-md-4">
         <ul id="gallery-container-{{selectedCategory.id}}-nav" class="gallery-nav">
           <li ng-repeat="image in selectedCategory.images">
-            <a href="#tab{{$index+1}}" ng-class="{'active': $index === 0}">
-              <img ng-src="{{image.thumb}}" alt="{{image.title}}" />
+            <a href="javascript:void(0)" ng-click="showImage($index)" ng-class="{'active': $index === currentImageIndex}">
+              <img ng-src="{{image.thumb || image.full}}" alt="{{image.title}}" />
             </a>
           </li>
         </ul>
@@ -156,6 +154,28 @@
   </div>
 </div>
 
+<!-- Menu flotante -->
+<div class="menu" id="menu">
+  <div class="burbujas">
+      <a href="#" class="icon"><img src="../assets/img/telefono.png" alt="Teléfono"></a>
+      <a href="#" class="icon"><img src="../assets/img/facebook.png" alt="Facebook"></a>
+      <a href="#" class="icon"><img src="../assets/img/instagram.png" alt="Instagram"></a>
+      <a href="#" class="icon"><img src="../assets/img/whatsapp.png" alt="WhatsApp"></a>
+  </div>
+  <div class="btn" id="menuBtn">
+      <img src="../assets/img/mensaje.gif" alt="Menú">
+  </div>
+</div>
+
+<script>
+  document.getElementById("menuBtn").addEventListener("click", function() {
+      document.getElementById("menu").classList.toggle("active");
+  });
+  document.getElementById("closeBtn").addEventListener("click", function() {
+      document.getElementById("menu").classList.remove("active");
+  });
+</script>
+
 <!-- Container (Contact Section) --> 
 <div id="contact" class="container-fluid bg-red">
 <h2 class="text-center">CONTACTANOS</h2>
@@ -178,10 +198,9 @@
         <div class="contact-text">contacto@kcmcocinas.com</div>
       </div>
     </div>
-
     <!-- Contenedor para los iconos de redes sociales mejorado -->
     <div class="social-box">
-      <h4 class="social-title">Síguenos en redes sociales</h4>
+      <h3 class="social-title">Síguenos en redes sociales</h3>
       <div class="social-icons-contact">
         <a href="https://www.facebook.com/kcmcocinas/" target="_blank" rel="noopener" title="Facebook" class="social-link">
           <i class="fab fa-facebook-square"></i>
@@ -194,9 +213,7 @@
   </div>
 
   <!-- Columna derecha para el formulario -->
-  <div class="col-md-7 contact-form-container">
-    <p>Se enviará un email al negocio</p>
-    
+  <div class="col-md-7 contact-form-container"> 
     <form class="contact-form">
       <div class="row">
         <div class="col-md-6">
