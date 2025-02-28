@@ -14,11 +14,12 @@ app.use(express.json());
 app.use(helmet());
 app.use(cors());
 
-app.use(cors({
-  origin: 'http://localhost:5500', // Cambia esto según la URL de tu frontend
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+const corsOptions = {
+  origin: ['http://localhost:5500', 'https://carpinteria-ten.vercel.app', 'https://propiacsa.com.mx/carpinteria/'],
+  allowedHeaders: 'Content-Type,Authorization'
+};
+app.use(cors(corsOptions));
+
 
 
 // Rate limiting
