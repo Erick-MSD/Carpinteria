@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="ksmApp">
+<head>
+  <title>KCM Carpintería</title>
+  <meta charset="utf-8">
+  <meta name="description" content="KCM Carpintería: expertos en muebles a medida, closets, vestidores y cocinas. Calidad y diseño garantizados.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <link href="./assets/css/style.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+
+  <link href="./assets/css/gallery.css" rel="stylesheet">
+  <script src="./assets/js/yetii-min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" ng-controller="MainController">
+
+<!-- Menú superior fijo -->
+<div class="top-bar">
+  <div class="container">
+    <div class="left">
+    </div>
+    <div class="right">
+      <span><i class="fas fa-phone"></i> (81) 1771-6378</span>
+      <span><i class="fas fa-envelope"></i> contacto@kcmcocinas.com</span>
+      <a href="https://www.facebook.com/kcmcocinas/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/kcm.cocinas/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Menú principal -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" title="Toggle navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                         
+      </button>
+      <a class="navbar-brand" href="#myPage">KCM</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="#portfolio">Nosotros</a></li>
+        <li><a href="#contact">Contacto</a></li>
+        <li><a href="login.html">Iniciar Sesión</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1 class="delineado-texto">NOSOTROS</h1> 
+</div>
+
+<!-- Container (Nosotros Section) -->
+<div id="portfolio" class="container-fluid text-center bg-grey">
+    <div class="row">
+      <!-- Columna de texto -->
+      <div class="col-md-6">
+        <h2>Nuestra Historia</h2><br>
+        <h4>En KCM Carpintería, nuestra historia comenzó con un sueño de ofrecer productos de carpintería de alta calidad, con un diseño innovador y la atención personalizada que nuestros clientes merecen. Desde nuestros inicios, hemos crecido junto a nuestra comunidad, ofreciendo soluciones a medida para cada hogar y empresa. Hoy, somos líderes en el diseño y fabricación de muebles a medida, closets, vestidores y cocinas, siempre buscando la satisfacción total de nuestros clientes.</h4>
+      </div>
+  
+      <!-- Columna de imagen -->
+      <div class="col-md-6">
+        <img src="../assets/img/telefono.png" class="img-fluid" alt="Imagen Nosotros" style="border-radius: 8px;">
+      </div>
+    </div>
+  </div>
+
+<!-- Container (Valores Section) -->
+<div id="valores" class="container-fluid text-center bg-light">
+    <h2>Nuestros Valores</h2><br>
+    <p class="lead">En KCM Carpintería, nuestros valores son el corazón de todo lo que hacemos. Creemos en la calidad, la innovación, el compromiso y el respeto hacia nuestros clientes y empleados.</p>
+    
+    <div class="row">
+      <!-- Valor 1: Calidad -->
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <img src="../assets/img/telefono.png" class="card-img-top" alt="Calidad" style="width: 100px; height: 100px; margin: 20px auto;">
+          <div class="card-body">
+            <h5 class="card-title">Calidad</h5>
+            <p class="card-text">Nos comprometemos a ofrecer productos de alta calidad, usando los mejores materiales y técnicas avanzadas para garantizar la satisfacción de nuestros clientes.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Valor 2: Innovación -->
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <img src="../assets/img/telefono.png" class="card-img-top" alt="Innovación" style="width: 100px; height: 100px; margin: 20px auto;">
+          <div class="card-body">
+            <h5 class="card-title">Innovación</h5>
+            <p class="card-text">Siempre estamos buscando nuevas formas de innovar y mejorar nuestros productos, adaptándonos a las tendencias del mercado y las necesidades de nuestros clientes.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Valor 3: Compromiso -->
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <img src="../assets/img/telefono.png" class="card-img-top" alt="Compromiso" style="width: 100px; height: 100px; margin: 20px auto;">
+          <div class="card-body">
+            <h5 class="card-title">Compromiso</h5>
+            <p class="card-text">Estamos comprometidos con nuestros clientes y colaboradores, brindando siempre un servicio personalizado y asegurando que cada proyecto se lleve a cabo con el mayor detalle y dedicación.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+<!-- Menu flotante -->
+<div class="menu" id="menu">
+  <div class="burbujas">
+      <a href="#" class="icon"><img src="../assets/img/telefono.png" alt="Teléfono"></a>
+      <a href="#" class="icon"><img src="../assets/img/facebook.png" alt="Facebook"></a>
+      <a href="#" class="icon"><img src="../assets/img/instagram.png" alt="Instagram"></a>
+      <a href="#" class="icon"><img src="../assets/img/whatsapp.png" alt="WhatsApp"></a>
+  </div>
+  <div class="btn" id="menuBtn">
+      <img src="../assets/img/mensaje.gif" alt="Menú">
+  </div>
+</div>
+
+<script>
+  document.getElementById("menuBtn").addEventListener("click", function() {
+      document.getElementById("menu").classList.toggle("active");
+  });
+  document.getElementById("closeBtn").addEventListener("click", function() {
+      document.getElementById("menu").classList.remove("active");
+  });
+</script>
+
+<!-- Container (Contact Section) --> 
+<div id="contact" class="container-fluid bg-red">
+    <h2 class="text-center">CONTACTANOS</h2>
+    <div class="row">
+      <div class="col-sm-4">
+        <h3 class="contact-title">Contactos</h3>
+        <div class="contact-info-box">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt contact-icon"></i>
+            <div class="contact-text">Jojutla 322, Mitras Nte., 64180 Monterrey, N.L.</div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-phone-alt contact-icon"></i>
+            <div class="contact-text">(81) 1771-6378</div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-envelope contact-icon"></i>
+            <div class="contact-text">contacto@kcmcocinas.com</div>
+          </div>
+        </div>
+        <!-- Contenedor para los iconos de redes sociales mejorado -->
+        <div class="social-box">
+          <h3 class="social-title">Síguenos en redes sociales</h3>
+          <div class="social-icons-contact">
+            <a href="https://www.facebook.com/kcmcocinas/" target="_blank" rel="noopener" title="Facebook" class="social-link">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+            <a href="https://www.instagram.com/kcm.cocinas/" target="_blank" rel="noopener" class="social-link" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Columna derecha para el formulario -->
+      <div class="col-md-7 contact-form-container"> 
+        <form class="contact-form">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <textarea class="form-control" id="message" name="message" placeholder="Que ocupas" type="text" required></textarea>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input class="form-control" id="name" name="name" placeholder="Tu nombre" type="text" required>
+              </div>
+              
+              <div class="form-group">
+                <input class="form-control" id="email" name="email" placeholder="Tu email" type="email" required>
+              </div>
+              
+              <div class="form-group">
+                <input class="form-control" id="phone" name="phone" placeholder="Número de teléfono" type="tel">
+              </div>
+            </div>
+          </div>
+          
+          <div class="checkbox-container">
+            <input type="checkbox" id="terms" name="terms">
+            <label for="terms">Al avanzar estoy de acuerdo con <a href="#">Términos y Condiciones</a> y <a href="#">Política de Privacidad</a> de UENI y cualesquier términos y condiciones aplicables de Woodplace Carpintería. Este sitio está protegido por reCAPTCHA y las <a href="#">Políticas de privacidad</a> y <a href="#">Términos del servicio</a> de Google aplican.</label>
+          </div>
+          
+          <div class="text-center">
+            <button class="btn btn-primary send-btn" type="submit">Enviar Mensaje</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
+
+<!-- Mapa -->
+<div class="map-section">
+    <div id="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3593.032986486448!2d-100.39033122459932!3d25.769473977347044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDQ2JzEwLjEiTiAxMDDCsDIzJzE1LjkiVw!5e0!3m2!1sen!2smx"
+        allowfullscreen="" 
+        title="Google Maps">
+      </iframe>
+    </div>
+    </section>
+    
+    </div>
+    <footer class="footer">
+      <div class="container">
+          <p>
+            <a>Copyright®2025 por KSM. Todos los derechos reservados.</a>
+              <a>Política de Privacidad</a> | 
+              <a>Términos y Condiciones</a> | 
+          </p>
+      </div>
+    </footer>
+
+<script src="assets/js/codigo.js"></script>
+</body>
+</html>

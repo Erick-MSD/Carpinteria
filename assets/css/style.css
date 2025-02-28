@@ -557,3 +557,132 @@ h4, p {
     height: 70px;
   }
 }
+
+/* ======================
+   Botton api
+   ====================== */
+  .menu {
+    position: fixed;
+    bottom: 10px;
+    right: 2px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.menu .btn {
+    width: 90px;
+    height: 60px;
+    background: linear-gradient(135deg, #80000c,#80000c );
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.menu .btn img {
+    width: 50px;
+}
+
+.menu .btn:hover {
+    transform: scale(1.1);
+}
+
+.menu .burbujas {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background: linear-gradient(135deg, #80000c ,#80000c );
+    padding: 10px 20px;
+    border-radius: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu .burbujas a {
+    width: 40px;
+    height: 40px;
+    background-color: #80000c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.menu .burbujas a:hover {
+    transform: scale(1.2);
+}
+
+.menu .burbujas a img {
+    width: 30px;
+}
+
+.menu.active .burbujas {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+
+
+
+
+/* Estilos para la sección Valores */
+#valores {
+  background-color: #f6f6f6;
+  color: #f6f6f6;
+  padding: 80px 20px;
+  text-align: center;
+  margin-bottom: 50px; /* Espacio extra debajo de la sección */
+}
+
+/* Estilos para el título de la sección de valores */
+#valores h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #80000c; /* Color solo para los títulos dentro de la sección de valores */
+}
+
+/* Si tienes otro <h2> en la página, puedes especificar otro color o estilos */
+#contact h2 {
+  color: #f6f6f6; /* Color para el título de la sección de contacto */
+}
+
+#valores p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+#valores .row {
+  margin-bottom: 30px; /* Añadir un margen inferior para separar las tarjetas */
+}
+
+#valores .card {
+  background-color: #bebebe;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#valores .card-title {
+  color: #000000;
+}
+
+#valores .card-body {
+  color: #f6f6f6;
+}
+
+/* Si los valores están en columnas, asegurarse de que se vean bien en dispositivos pequeños */
+@media (max-width: 767px) {
+  #valores .col-md-4 {
+      margin-bottom: 20px;
+  }
+}
