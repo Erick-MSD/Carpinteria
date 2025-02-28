@@ -11,6 +11,7 @@
    General Styles
    ====================== */
 body {
+  font-family: 'Josefin Sans', sans-serif;
   font: 400 15px Lato, sans-serif;
   line-height: 1.8;
   color: var(--text-color);
@@ -39,12 +40,12 @@ h4, p {
    ====================== */
 .jumbotron {
   position: relative;
-  background-image: url('../img/cocinared.jpg');
+  background-image: url('../img/Cocina8.jpg');
   background-size: cover;
   background-position: center;
   color: var(--white);
   padding: 100px 25px;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .jumbotron::before {
@@ -65,13 +66,9 @@ h4, p {
 }
 
 .delineado-texto {
-  font-size: 24px;
+  font-size: 30px;
   color: var(--white);
-  text-shadow: 
-    1px 1px 0px var(--black), 
-    -1px -1px 0px var(--black), 
-    1px -1px 0px var(--black), 
-    -1px 1px 0px var(--black);
+  
 }
 
 /* ======================
