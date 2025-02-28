@@ -6,20 +6,18 @@
   --white: #fff; /* Blanco */
   --black: #000; /* Negro */
   --hover-color: #ffcccb; /* Color de hover */
-}
 
 /* ======================
    General Styles
    ====================== */
-   body {
-    font: 400 15px Lato, sans-serif;
-    line-height: 1.8;
-    color: #303030;
-    background-color: #f6f6f6; /* Fondo de la página */
-    margin: 0; /* Eliminar márgenes predeterminados */
-    padding: 0; /* Eliminar paddings predeterminados */
-  }
-  
+body {
+  font: 400 15px Lato, sans-serif;
+  line-height: 1.8;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
 
 h2 {
   font-size: 24px;
@@ -79,254 +77,216 @@ h4, p {
 /* ======================
    Portfolio Section
    ====================== */
-   #portfolio {
-    background-color: #f6f6f6; /* Fondo gris claro */
-    padding: 60px 50px;
-    margin: 0; /* Eliminar márgenes */
-  }
-  
-  .image-row {
-    display: flex;
-    flex-wrap: nowrap; /* Evita que las imágenes se envuelvan a la siguiente línea */
-    justify-content: space-between; /* Espacio uniforme entre las imágenes */
-    gap: 15px; /* Espacio entre las imágenes */
-    padding: 10px 0;
-    overflow-x: auto; /* Permite el desplazamiento horizontal si no caben */
-  }
-  
-  .thumbnail {
-    flex: 1 1 calc(20% - 15px); /* Cada imagen ocupa el 20% del contenedor menos el espacio del gap */
-    min-width: 200px; /* Ancho mínimo para evitar que las imágenes se hagan demasiado pequeñas */
-    display: flex;
-    flex-direction: column-reverse; /* Texto encima de la imagen */
-    align-items: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #ddd; /* Borde opcional */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .thumbnail img {
-    width: 100%;
-    height: 250px; /* Altura fija para las imágenes */
-    object-fit: cover; /* Asegura que la imagen se recorte para llenar el contenedor sin distorsionarse */
-    transition: 0.3s ease-in-out;
-  }
-  
-  .thumbnail:hover img {
-    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
-  }
-  
-  .text-content {
-    padding: 10px; /* Espacio para que no quede pegado a la imagen */
-    z-index: 2; /* Asegura que el texto esté por encima de la imagen */
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  .thumbnail:hover .text-content {
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño del texto */
-    color: #80000c; /* Cambia el color del texto al pasar el cursor */
-  }
+#portfolio {
+  background-color: var(--background-color);
+  padding: 60px 50px;
+  margin: 0;
+}
+
+.image-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+  overflow-x: auto;
+}
+
+.thumbnail {
+  flex: 1 1 calc(20% - 15px);
+  min-width: 200px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: 0.3s ease-in-out;
+}
+
+.thumbnail:hover img {
+  transform: scale(1.1);
+}
+
+.text-content {
+  padding: 10px;
+  z-index: 2;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.thumbnail:hover .text-content {
+  transform: scale(1.05);
+  color: var(--primary-color);
+}
 
 /* ======================
-   Contact Section Mejorado
+   Contact Section
    ====================== */
-   #contact {
-    background-color: #590008;
-    padding: 60px 50px;
-    color: white;
-  }
-  
-  #contact h2 {
-    color: white;
-    font-size: 32px;
-    margin-bottom: 40px;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-  
-  /* Estilos específicos para la sección de contactos */
-  .contact-title {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-bottom: 2px solid white;
-    padding-bottom: 10px;
-    display: inline-block;
-  }
-  
-  .contact-info-box {
-    background-color: #590008;
-    border-radius: 8px;
-    padding: 25px;
-    margin-bottom: 25px;
-  }
-  
-  .contact-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-  
-  .contact-item:last-child {
-    margin-bottom: 0;
-  }
-  
-  .contact-icon {
-    font-size: 24px;
-    color: white;
-    margin-right: 15px;
-    margin-top: 3px;
-  }
-  
-  .contact-text {
-    font-size: 18px;
-    line-height: 1.5;
-    font-weight: 500;
-  }
-  
-  /* Estilos para la sección de redes sociales */
-  .social-box {
-    background-color: #590008;
-    border-radius: 8px;
-    padding: 20px;
-  }
-  
-  .social-title {
-    font-size: 20px;
-    margin-bottom: 15px;
-    font-weight: 600;
-    font-style: white;
-  }
-  
-  .social-icons-contact {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .social-link {
-    color: white;
-    font-size: 32px;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #590008;
-  }
-  
-  .social-link:hover {
-    background-color: #ff9933;
-    transform: translateY(-3px);
-  }
-  
-  /* Estilos para el formulario */
-  .contact-form {
-    background-color: #590008;
-    padding: 25px;
-    border-radius: 8px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-control {
-    padding: 12px 15px;
-    border: none;
-    border-radius: 4px;
-    height: auto;
-    font-size: 16px;
-    width: 100%;
-    background-color: white;
-  }
-  
-  textarea.form-control {
-    height: 100%;
-    min-height: 158px;
-    resize: none;
-  }
-  
-  /* Estilos para el checkbox */
-  .form-check {
-    padding-left: 25px;
-  }
-  
-  .form-check-input {
-    margin-left: -25px;
-    margin-top: 5px;
-  }
-  
-  .form-check-label {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-  
-  .form-check-label a {
-    color: #ff9933;
-    text-decoration: none;
-  }
-  
-  /* Botón de envío */
-  .btn-send {
-    background-color: #ff9933;
-    border: none;
-    color: white;
-    padding: 12px 40px;
-    border-radius: 30px;
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: 15px;
-    transition: all 0.3s;
-  }
-  
-  .btn-send:hover {
-    background-color: #ff8c1a;
-    transform: translateY(-2px);
-  }
-  
-  /* Media queries para responsividad */
-  @media (max-width: 992px) {
-    #contact {
-      padding: 50px 30px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    #contact {
-      padding: 40px 20px;
-    }
-    
-    .contact-info-box, .social-box {
-      margin-bottom: 20px;
-    }
-    
-    .contact-title {
-      font-size: 24px;
-    }
-    
-    .contact-text {
-      font-size: 16px;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .contact-icon {
-      font-size: 20px;
-    }
-    
-    .social-link {
-      width: 45px;
-      height: 45px;
-      font-size: 28px;
-    }
-  }
+#contact {
+  background-color: var(--secondary-color);
+  padding: 60px 50px;
+  color: var(--white);
+}
+
+#contact h2 {
+  color: var(--white);
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.contact-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--white);
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.contact-info-box {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-icon {
+  font-size: 24px;
+  color: var(--white);
+  margin-right: 15px;
+  margin-top: 3px;
+}
+
+.contact-text {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* Social Media Section */
+.social-box {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.social-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.social-icons-contact {
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  color: var(--white);
+  font-size: 32px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+}
+
+.social-link:hover {
+  background-color: #ff9933;
+  transform: translateY(-3px);
+}
+
+/* Form Styles */
+.contact-form {
+  background-color: var(--secondary-color);
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  height: auto;
+  font-size: 16px;
+  width: 100%;
+  background-color: var(--white);
+}
+
+textarea.form-control {
+  height: 100%;
+  min-height: 158px;
+  resize: none;
+}
+
+/* Checkbox Styles */
+.form-check {
+  padding-left: 25px;
+}
+
+.form-check-input {
+  margin-left: -25px;
+  margin-top: 5px;
+}
+
+.form-check-label {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.form-check-label a {
+  color: #ff9933;
+  text-decoration: none;
+}
+
+/* Send Button */
+.btn-send {
+  background-color: #ff9933;
+  border: none;
+  color: var(--white);
+  padding: 12px 40px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 15px;
+  transition: all 0.3s;
+}
+
+.btn-send:hover {
+  background-color: #ff8c1a;
+  transform: translateY(-2px);
+}
+
 /* ======================
    Footer
    ====================== */
@@ -352,138 +312,345 @@ h4, p {
 /* ======================
    Top Bar
    ====================== */
-   .top-bar {
-    background-color: #590008; /* Color rojo oscuro */
-    color: white;
-    padding: 5px 0; /* Altura reducida */
-    font-size: 12px; /* Tamaño de fuente reducido */
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1030; /* Mayor que el navbar */
-    height: 30px; /* Altura fija para el top-bar */
-  }
-  
-  .top-bar .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Espacia los elementos */
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  
-  .top-bar .left {
-    margin-left: 0; /* Asegura que el texto esté a la izquierda */
-    flex-grow: 1; /* Ocupa el espacio disponible */
-    text-align: left;
-    padding-left: 15px; /* Asegura margen del container */
-  }
-  
-  .top-bar .right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Asegura que los contactos estén a la derecha */
-    flex-grow: 1;
-    text-align: right;
-    padding-right: 15px;
-    gap: 20px; /* Espacio entre elementos */
-  }
-  
-  .top-bar span, .top-bar a {
-    color: white;
-    margin: 0 8px; /* Espaciado entre elementos */
-    text-decoration: none;
-  }
-  
-  .top-bar a:hover {
-    text-decoration: underline;
-  }
-  
-  
+.top-bar {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 5px 0;
+  font-size: 12px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1030;
+  height: 30px;
+}
+
+.top-bar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.top-bar .left {
+  margin-left: 0;
+  flex-grow: 1;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.top-bar .right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  text-align: right;
+  padding-right: 15px;
+  gap: 20px;
+}
+
+.top-bar span, .top-bar a {
+  color: var(--white);
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+.top-bar a:hover {
+  text-decoration: underline;
+}
+
 /* ======================
-   Navbar (Menú principal)
+   Navbar (Menú principal)
    ====================== */
-   .navbar {
-    background-color: #80000c; /* Color rojo más claro */
-    margin-bottom: 0;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 4px;
-    border-radius: 0;
-    font-family: Montserrat, sans-serif;
-    position: fixed;
-    top: 30px; /* Ajuste para que esté justo debajo del top-bar */
-    width: 100%;
-    z-index: 1020;
-  }
-  
-  .navbar li a,
-  .navbar .navbar-brand {
-    color: white !important;
-  }
-  
-  .navbar-nav li a:hover,
-  .navbar-nav li.active a {
-    color: #ffcccb !important; /* Resalta el color del texto */
-  }
-  
+.navbar {
+  background-color: #80000c;
+  margin-bottom: 0;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0;
+  font-family: Montserrat, sans-serif;
+  position: fixed;
+  top: 30px;
+  width: 100%;
+  z-index: 1020;
+}
+
+.navbar li a,
+.navbar .navbar-brand {
+  color: var(--white) !important;
+}
+
+.navbar-nav li a:hover,
+.navbar-nav li.active a {
+  color: #ffcccb !important;
+}
+
 /* ======================
-   Sección del mapa
+   Sección del mapa
    ====================== */
-   .map-section {
-    background-color: #590008;
-    padding: 40px 0;
-    width: 100%;
+.map-section {
+  background-color: var(--secondary-color);
+  padding: 40px 0;
+  width: 100%;
+}
+
+#map-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#map-container iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  #contact {
+    padding: 50px 30px;
   }
-  
-  #map-container {
-    max-width: 1200px;
-    width: 90%;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  #map-container iframe {
-    width: 100%; /* Cambiado de 60% a 100% para ocupar todo el ancho del contenedor */
-    height: 400px; /* Aumenté un poco la altura para mejor visualización */
-    border: none;
-    display: block; /* Asegura que no haya espacios extra */
-  }
-  
-  /* Para pantallas más pequeñas */
-  @media (max-width: 768px) {
-    #map-container {
-      width: 95%;
-    }
-    
-    #map-container iframe {
-      height: 300px;
-    }
+}
+
+@media (max-width: 768px) {
+  #contact {
+    padding: 40px 20px;
   }
 
-  /* ======================
-     Responsive Styles
-     ====================== */
-  @media screen and (max-width: 768px) {
-    .top-bar .right {
-      flex-direction: column;
-      gap: 5px;
-      align-items: flex-end;
-    }
-  
-    .navbar {
-      top: 80px; /* Ajuste para móviles */
-    }
-  
-    #map-container {
-      width: 95%; /* Más ancho en móviles */
-      margin-top: 120px; /* Más margen superior en móviles */
-    }
+  .contact-info-box, .social-box {
+    margin-bottom: 20px;
   }
+
+  .contact-title {
+    font-size: 24px;
+  }
+
+  .contact-text {
+    font-size: 16px;
+  }
+
+  .image-row {
+    flex-wrap: wrap;
+  }
+
+  .thumbnail {
+    flex: 1 1 100%;
+  }
+
+  .menu .btn {
+    width: 70px;
+    height: 50px;
+  }
+
+  .menu .btn img {
+    width: 40px;
+  }
+
+  .menu .burbujas a {
+    width: 35px;
+    height: 35px;
+  }
+
+  .menu .burbujas a img {
+    width: 25px;
+  }
+
+  #Conocenos {
+    margin-top: -30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-icon {
+    font-size: 20px;
+  }
+
+  .social-link {
+    width: 45px;
+    height: 45px;
+    font-size: 28px;
+  }
+
+  .jumbotron {
+    padding: 60px 10px;
+  }
+
+  .delineado-texto {
+    font-size: 20px;
+  }
+
+  #portfolio {
+    padding: 40px 20px;
+  }
+
+  .thumbnail img {
+    height: 200px;
+  }
+
+  .menu .btn {
+    width: 60px;
+    height: 40px;
+  }
+
+  .menu .btn img {
+    width: 30px;
+  }
+
+  .menu .burbujas {
+    gap: 10px;
+    padding: 8px 15px;
+  }
+
+  #Conocenos {
+    margin-top: 0;
+    padding: 40px 15px;
+  }
+
+  .feature-item {
+    width: 130px;
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Ajustar espaciado cuando el navbar es fijo en dispositivos grandes */
+@media screen and (min-width: 769px) {
+  body {
+    padding-top: 80px; /* Altura combinada del top-bar y navbar */
+  }
+}
+
+/* Estilos para la sección Valores */
+#valores {
+  background-color: #f6f6f6;
+  color: #f6f6f6;
+  padding: 80px 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#valores h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #80000c;
+}
+
+#contact h2 {
+  color: #f6f6f6;
+}
+
+#valores p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+#valores .row {
+  margin-bottom: 30px;
+}
+
+#valores .card {
+  background-color: #bebebe;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#valores .card-title {
+  color: #000000;
+}
+
+#valores .card-body {
+  color: #f6f6f6;
+}
+
+/* Si los valores están en columnas, asegurarse de que se vean bien en dispositivos pequeños */
+@media (max-width: 767px) {
+  #valores .col-md-4 {
+    margin-bottom: 20px;
+  }
+}
+
+/* ======================
+   Botón API
+   ====================== */
+.menu {
+  position: fixed;
+  bottom: 10px;
+  right: 2px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.menu .btn {
+  width: 90px;
+  height: 60px;
+  background: linear-gradient(135deg, #80000c, #80000c);
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.menu .btn img {
+  width: 50px;
+}
+
+.menu .btn:hover {
+  transform: scale(1.1);
+}
+
+.menu .burbujas {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  background: linear-gradient(135deg, #80000c, #80000c);
+  padding: 10px 20px;
+  border-radius: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu .burbujas a {
+  width: 40px;
+  height: 40px;
+  background-color: #80000c;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.menu .burbujas a:hover {
+  transform: scale(1.2);
+}
+
+.menu .burbujas a img {
+  width: 30px;
+}
+
+.menu.active .burbujas {
+  opacity: 1;
+  transform: scale(1);
+}
 
 /* Sección Conócenos */
 #Conocenos {
@@ -629,60 +796,31 @@ h4, p {
     transform: scale(1);
 }
 
-
-
-
-
-
-/* Estilos para la sección Valores */
-#valores {
-  background-color: #f6f6f6;
-  color: #f6f6f6;
-  padding: 80px 20px;
-  text-align: center;
-  margin-bottom: 50px; /* Espacio extra debajo de la sección */
-}
-
-/* Estilos para el título de la sección de valores */
-#valores h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #80000c; /* Color solo para los títulos dentro de la sección de valores */
-}
-
-/* Si tienes otro <h2> en la página, puedes especificar otro color o estilos */
-#contact h2 {
-  color: #f6f6f6; /* Color para el título de la sección de contacto */
-}
-
-#valores p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-#valores .row {
-  margin-bottom: 30px; /* Añadir un margen inferior para separar las tarjetas */
-}
-
-#valores .card {
-  background-color: #bebebe;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#valores .card-title {
-  color: #000000;
-}
-
-#valores .card-body {
-  color: #f6f6f6;
-}
-
-/* Si los valores están en columnas, asegurarse de que se vean bien en dispositivos pequeños */
-@media (max-width: 767px) {
-  #valores .col-md-4 {
-      margin-bottom: 20px;
+  
+  /* Adjust navbar positioning */
+  .navbar {
+    top: auto;
+    position: relative;
+  }
+  
+  /* Fix body padding to account for navigation */
+  body {
+    padding-top: 0;
+  }
+  
+  /* Make sure the jumbotron starts at the right position */
+  .jumbotron {
+    margin-top: 0;
+  }
+  
+  /* Ensure logo and navigation are properly sized */
+  .navbar-brand img {
+    max-height: 40px;
+  }
+  
+  /* Improve menu button visibility */
+  .navbar-toggle {
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
 }
