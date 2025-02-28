@@ -1,53 +1,36 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Evento para el formulario de inicio de sesión
-    document.getElementById("loginForm").addEventListener("submit", async function (event) {
-        event.preventDefault();
-
-        const email = document.getElementById("loginEmail").value;
-        const password = document.getElementById("loginPassword").value;
-
-        const response = await fetch("http://localhost:3000/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ correo: email, password: password })
+// Para login.html
+document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.getElementById('loginForm');
+    
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            // Verificar que ambos campos estén completos
+            if (!email || !password) {
+                alert('Por favor, completa todos los campos');
+                return;
+            }
+            
+            // Verificar credenciales contra localStorage
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const user = users.find(u => u.email === email && u.password === password);
+            
+            if (user) {
+                // Guardar sesión del usuario
+                sessionStorage.setItem('currentUser', JSON.stringify({
+                    name: user.name,
+                    email: user.email
+                }));
+                
+                alert('Inicio de sesión exitoso');
+                window.location.href = 'dashboard.html'; // Redireccionar a la página principal después del login
+            } else {
+                alert('Correo electrónico o contraseña incorrectos');
+            }
         });
-
-        const data = await response.json();
-        if (response.ok) {
-            alert("Inicio de sesión exitoso");
-            localStorage.setItem("token", data.token); // Guarda el token
-            window.location.href = "/perfil"; // Redirige a perfil (ajusta según necesidad)
-        } else {
-            alert(data.message);
-        }
-    });
-
-    // Evento para el formulario de registro
-    document.getElementById("registerForm").addEventListener("submit", async function (event) {
-        event.preventDefault();
-
-        const nombre = document.getElementById("registerName").value;
-        const email = document.getElementById("registerEmail").value;
-        const password = document.getElementById("registerPassword").value;
-        const confirmPassword = document.getElementById("confirmPassword").value;
-
-        if (password !== confirmPassword) {
-            alert("Las contraseñas no coinciden");
-            return;
-        }
-
-        const response = await fetch("http://localhost:3000/register", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ nombre, correo: email, password })
-        });
-
-        const data = await response.json();
-        if (response.ok) {
-            alert("Registro exitoso, ahora inicia sesión.");
-            showLogin(); // Cambia la pestaña al login
-        } else {
-            alert(data.message);
-        }
-    });
+    }
 });
