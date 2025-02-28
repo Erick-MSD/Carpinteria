@@ -19,7 +19,6 @@
   <link href="./assets/css/gallery.css" rel="stylesheet">
   <script src="./assets/js/yetii-min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -168,35 +167,39 @@
     
       <!-- Columna derecha para el formulario -->
       <div class="col-md-7 contact-form-container"> 
-        <form class="contact-form">
+        <form action="https://formsubmit.co/msantiago0608@gmail.com" method="POST" class="contact-form">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <textarea class="form-control" id="message" name="message" placeholder="Que ocupas" type="text" required></textarea>
+                <textarea class="form-control" id="message" name="message" placeholder="Escribe tu mensaje aquí" required></textarea>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <input class="form-control" id="name" name="name" placeholder="Tu nombre" type="text" required>
               </div>
-              
+
               <div class="form-group">
                 <input class="form-control" id="email" name="email" placeholder="Tu email" type="email" required>
               </div>
-              
+
               <div class="form-group">
-                <input class="form-control" id="phone" name="phone" placeholder="Número de teléfono" type="tel">
+                <input class="form-control" id="phone" name="phone" placeholder="Número de teléfono" type="tel">
               </div>
             </div>
           </div>
-          
+
+          <!-- Campos ocultos -->
+          <input type="hidden" name="_next" value="http://127.0.0.1:5500/servicios.html">
+          <input type="hidden" name="_captcha" value="false">
+
           <div class="text-center">
-            <button class="btn btn-primary send-btn" type="submit">Enviar Mensaje</button>
+            <input class="btn btn-primary send-btn" type="submit" value="Enviar">
           </div>
         </form>
       </div>
     </div>
-    </div>
+</div>
 
 <!-- Mapa -->
 <div class="map-section">
