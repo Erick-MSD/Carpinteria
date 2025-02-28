@@ -11,32 +11,39 @@ $scope.categories = [
     id: 'cocinas',
     name: 'Cocinas',
     thumbnail: './assets/img/cocina.jpg',
-    description: 'Nuestras cocinas están diseñadas para combinar funcionalidad y estética, adaptándose a tu estilo y necesidades.',
+    description: 'Nuestras cocinas están diseñadas para combinar funcionalidad y estética, adaptándose a tu estilo y necesidades.',
     images: [
 {
     full: './assets/img/cocina.jpg',
     thumb: './assets/img/cocina.jpg',
     title: 'Cocina de estilo Tradicional',
-    description: 'Diseño elegante con acabados de alta calidad y funcionalidad integrada.'
+    description: 'Diseño elegante con acabados de alta calidad y funcionalidad integrada.'
         },
 {
     full: './assets/img/Cocina5.jpg',
     thumb: './assets/img/Cocina5.jpg',
-    title: 'Cocina de estilo Tradicional',
-    description: 'Diseño elegante con acabados de alta calidad y funcionalidad integrada.'
+    title: 'Cocina con acabados negros y de granito',
+    description: 'Diseño enfocado a los colores negros, ofreciendo un estilo mas maduro.'
         },
 {
     full: './assets/img/Cocina4.jpg',
     thumb: './assets/img/Cocina4.jpg',
-    title: 'Cocina de estilo Tradicional',
-    description: 'Diseño elegante con acabados de alta calidad y funcionalidad integrada.'
+    title: 'Cocina de estilo Moderno',
+    description: 'Diseño elegante con acabados de alta calidad y enfocado a la utilizacion de colores rojos y blancos.'
         },
 {
     full: './assets/img/Cocina3.jpg',
     thumb: './assets/img/Cocina3.jpg',
-    title: 'Cocina de estilo Tradicional 2',
-    description: 'Otra descripción de la cocina.'
-}]
+    title: 'Cocina clasica',
+    description: 'Esta cocina ofrece un estilo clasico sin perder de vista todo el apartado de funcionalidad y estetica.'
+},
+{
+    full: './assets/img/cocina6.jpg',
+    thumb: './assets/img/cocina6.jpg',
+    title: 'Cocina con barra',
+    description: 'Esta cocina ofrece un estilo clasico con el agregado de tener una barra que permite mayor comodidad.'
+}
+]
 },
 
 
@@ -45,37 +52,37 @@ $scope.categories = [
     id: 'closets',
     name: 'Closets',
     thumbnail: './assets/img/closet.jpg',
-    description: 'Creamos closets personalizados que aprovechan al máximo el espacio y se adaptan a tus necesidades de almacenamiento.',
+    description: 'Creamos closets personalizados que aprovechan al máximo el espacio y se adaptan a tus necesidades de almacenamiento.',
     images: [
     {
     full: './assets/img/closet.jpg', 
     thumb: './assets/img/closet.jpg', 
     title: 'Closet Modular',
-    description: 'Texto de la descripción de la imagen.'
+    description: 'Texto de la descripción de la imagen.'
 },
 {
     full: './assets/img/Closet2.jpg', 
     thumb: './assets/img/Closet2.jpg', 
     title: 'Closet Modular',
-    description: 'Texto de la descripción de la imagen.'
+    description: 'Texto de la descripción de la imagen.'
 },
 {
     full: './assets/img/Closet3.jpg', 
     thumb: './assets/img/Closet3.jpg', 
     title: 'Closet Modular',
-    description: 'Texto de la descripción de la imagen.'
+    description: 'Texto de la descripción de la imagen.'
 },
 {
     full: './assets/img/Closet4.jpg', 
     thumb: './assets/img/Closet4.jpg', 
     title: 'Closet Modular',
-    description: 'Texto de la descripción de la imagen.'
+    description: 'Texto de la descripción de la imagen.'
 },
 {
     full: './assets/img/Closet5.jpg', 
     thumb: './assets/img/Closet5.jpg', 
     title: 'Closet Modular',
-    description: 'Texto de la descripción de la imagen.'
+    description: 'Texto de la descripción de la imagen.'
 },
 
 
@@ -86,29 +93,41 @@ $scope.categories = [
     id: 'vestidores',
     name: 'Vestidores',
     thumbnail: './assets/img/vestidor.jpg',
-    description: 'Diseñamos vestidores elegantes y funcionales que transformarán tu experiencia diaria.',
+    description: 'Diseñamos vestidores elegantes y funcionales que transformarán tu experiencia diaria.',
     images: [
 {
     full: './assets/img/vestidor.jpg',
     thumb: './assets/img/vestidor.jpg', 
-    title: 'Título de la imagen',
-    description: 'Texto de la descripción de la imagen.'
+    title: 'Vestidor convencional',
+    description: 'Texto de la descripción de la imagen.'
+    },
+{
+    full: './assets/img/vestidor4.jpg',
+    thumb: './assets/img/vestidor4.jpg', 
+    title: 'Vestidor convencional',
+    description: 'Texto de la descripción de la imagen.'
+    },
+{
+    full: './assets/img/vestidor3.jpg',
+    thumb: './assets/img/vestidor3.jpg', 
+    title: 'Vestidor convencional',
+    description: 'Texto de la descripción de la imagen.'
     },
 {
     full: './assets/img/vestidor1.1.jpg',
     thumb: './assets/img/vestidor1.1.jpg', 
-    title: 'Título de la imagen',
-    description: 'Texto de la descripción de la imagen.'
+    title: 'Vestidor convencional',
+    description: 'Texto de la descripción de la imagen.'
 },
 {
     full: './assets/img/vestidor1.2.jpg',
     thumb: './assets/img/vestidor1.2.jpg', 
-    title: 'Título de la imagen',
-    description: 'Texto de la descripción de la imagen.'
+    title: 'Vestidor convencional',
+    description: 'Texto de la descripción de la imagen.'
     },
 ]
 },
-// Baños
+// Baños
 {
     id: 'muebles-bano',
     name: 'Muebles de baño',
@@ -118,15 +137,29 @@ $scope.categories = [
 {
     full: './assets/img/baño.jpg',
     thumb: './assets/img/baño.jpg',
-    title: 'Título de la imagen',
+    title: 'Mueble de baño clasico',
     description: 'Texto de la descripción de la imagen.'
     },
 {
-    full: './assets/img/Baño1.jpg',
-    thumb: './assets/img/Baño1.jpg', 
-    title: 'Título de la imagen',
+    full: './assets/img/baño3.jpg',
+    thumb: './assets/img/baño3.jpg', 
+    title: 'Mueble de baño clasico',
     description: 'Texto de la descripción de la imagen.'
-    },    
+    }, 
+    
+{
+    full: './assets/img/baño4.jpg',
+    thumb: './assets/img/baño4.jpg', 
+    title: 'Mueble de baño clasico',
+    description: 'Texto de la descripción de la imagen.'
+    },
+{
+    full: './assets/img/baño5.jpg',
+    thumb: './assets/img/baño5.jpg', 
+    title: 'Mueble de baño clasico',
+    description: 'Texto de la descripción de la imagen.'
+    },  
+
 ]
 },
 // Muebles especiales
@@ -134,36 +167,36 @@ $scope.categories = [
     id: 'muebles-especiales',
     name: 'Muebles especiales',
     thumbnail: './assets/img/mueble esp.jpg',
-    description: 'Creamos muebles a medida para necesidades específicas, desde centros de entretenimiento hasta escritorios personalizados.',
+    description: 'Creamos muebles a medida para necesidades específicas, desde centros de entretenimiento hasta escritorios personalizados.',
     images: [
 {
     full: './assets/img/mueble esp.jpg',
     thumb: './assets/img/mueble esp.jpg', 
-    title: 'Título de la imagen',
-    description: 'Texto de la descripción de la imagen.'
+    title: 'Mueble comodo',
+    description: 'Texto de la descripción de la imagen.'
     },
 {
     full: './assets/img/MuebleEspecial4.jpg',
     thumb: './assets/img/MuebleEspecial4.jpg', 
-    title: 'Título de la imagen',
-    description: 'Texto de la descripción de la imagen.'
+    title: 'Mueble comodo',
+    description: 'Texto de la descripción de la imagen.'
     },
 {
     full: './assets/img/MuebleEspecial2.jpg',
     thumb: './assets/img/MuebleEspecial2.jpg', 
-    title: 'Título de la imagen',
-    description: 'Texto de la descripción de la imagen.'
+    title: 'Mueble comodo',
+    description: 'Texto de la descripción de la imagen.'
     },
 {
     full: './assets/img/MuebleEspecial3.jpg',
     thumb: './assets/img/MuebleEspecial3.jpg', 
-    title: 'Título de la imagen',
-    description: 'Texto de la descripción de la imagen.'
+    title: 'Mueble comodo',
+    description: 'Texto de la descripción de la imagen.'
     },   
 ]}
 ];
 
-// Método para mostrar la galería de una categoría
+// Método para mostrar la galería de una categoría
     $scope.showCategoryGallery = function(category) {
         $scope.selectedCategory = category;
         $scope.showGallery = true;
@@ -175,7 +208,7 @@ $scope.categories = [
         }, 100);
     };
 
-    // Método para cambiar a la siguiente imagen
+    // Método para cambiar a la siguiente imagen
     $scope.nextImage = function() {
         if ($scope.selectedCategory && $scope.selectedCategory.images.length > 0) {
             $scope.currentImageIndex = ($scope.currentImageIndex + 1) % $scope.selectedCategory.images.length;
@@ -183,7 +216,7 @@ $scope.categories = [
         }
     };
 
-    // Método para cambiar a una imagen específica
+    // Método para cambiar a una imagen específica
     $scope.showImage = function(index) {
         if ($scope.selectedCategory && index >= 0 && index < $scope.selectedCategory.images.length) {
             $scope.currentImageIndex = index;
@@ -191,7 +224,7 @@ $scope.categories = [
         }
     };
 
-    // Función auxiliar para actualizar la imagen visible
+    // Función auxiliar para actualizar la imagen visible
     function updateVisibleImage(index) {
 
         var tabs = document.querySelectorAll('#gallery-container-' + $scope.selectedCategory.id + ' .tab');
