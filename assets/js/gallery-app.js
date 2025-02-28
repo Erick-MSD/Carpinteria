@@ -48,26 +48,65 @@ $scope.categories = [
     description: 'Creamos closets personalizados que aprovechan al máximo el espacio y se adaptan a tus necesidades de almacenamiento.',
     images: [
     {
-    full: './assets/img/vestidor.jpg', // Corregido: cambiado a formato consistente
-    thumb: './assets/img/vestidor.jpg', // Añadido thumb que faltaba
+    full: './assets/img/closet.jpg', 
+    thumb: './assets/img/closet.jpg', 
     title: 'Closet Modular',
     description: 'Texto de la descripción de la imagen.'
-}
+},
+{
+    full: './assets/img/Closet2.jpg', 
+    thumb: './assets/img/Closet2.jpg', 
+    title: 'Closet Modular',
+    description: 'Texto de la descripción de la imagen.'
+},
+{
+    full: './assets/img/Closet3.jpg', 
+    thumb: './assets/img/Closet3.jpg', 
+    title: 'Closet Modular',
+    description: 'Texto de la descripción de la imagen.'
+},
+{
+    full: './assets/img/Closet4.jpg', 
+    thumb: './assets/img/Closet4.jpg', 
+    title: 'Closet Modular',
+    description: 'Texto de la descripción de la imagen.'
+},
+{
+    full: './assets/img/Closet5.jpg', 
+    thumb: './assets/img/Closet5.jpg', 
+    title: 'Closet Modular',
+    description: 'Texto de la descripción de la imagen.'
+},
+
+
 ]
 },
 // Vestidores
 {
     id: 'vestidores',
     name: 'Vestidores',
-    thumbnail: './assets/img/baño.jpg',
+    thumbnail: './assets/img/vestidor.jpg',
     description: 'Diseñamos vestidores elegantes y funcionales que transformarán tu experiencia diaria.',
     images: [
-    {
-    full: './assets/img/gallery/vestidores/vestidor1.jpg',
-    thumb: './assets/img/gallery/vestidores/vestidor1.jpg', // Añadido thumb que faltaba
+{
+    full: './assets/img/vestidor.jpg',
+    thumb: './assets/img/vestidor.jpg', 
     title: 'Título de la imagen',
     description: 'Texto de la descripción de la imagen.'
-}]
+    },
+{
+    full: './assets/img/vestidor1.1.jpg',
+    thumb: './assets/img/vestidor1.1.jpg', 
+    title: 'Título de la imagen',
+    description: 'Texto de la descripción de la imagen.'
+},
+{
+    full: './assets/img/vestidor1.2.jpg',
+    thumb: './assets/img/vestidor1.2.jpg', 
+    title: 'Título de la imagen',
+    description: 'Texto de la descripción de la imagen.'
+    },
+]
 },
 // Baños
 {
@@ -76,12 +115,19 @@ $scope.categories = [
     thumbnail: './assets/img/baño.jpg',
     description: 'Nuestros muebles de baño combinan durabilidad, resistencia a la humedad y diseño contemporáneo.',
     images: [
-    {
-    full: './assets/img/gallery/banos/bano1.jpg',
-    thumb: './assets/img/gallery/banos/thumbs/bano1.jpg',
+{
+    full: './assets/img/baño.jpg',
+    thumb: './assets/img/baño.jpg',
     title: 'Título de la imagen',
     description: 'Texto de la descripción de la imagen.'
-}]
+    },
+{
+    full: './assets/img/Baño1.jpg',
+    thumb: './assets/img/Baño1.jpg', 
+    title: 'Título de la imagen',
+    description: 'Texto de la descripción de la imagen.'
+    },    
+]
 },
 // Muebles especiales
 {
@@ -91,30 +137,45 @@ $scope.categories = [
     description: 'Creamos muebles a medida para necesidades específicas, desde centros de entretenimiento hasta escritorios personalizados.',
     images: [
 {
-    full: './assets/img/gallery/especiales/especial1.jpg',
-    thumb: './assets/img/gallery/especiales/especial1.jpg', 
+    full: './assets/img/mueble esp.jpg',
+    thumb: './assets/img/mueble esp.jpg', 
     title: 'Título de la imagen',
     description: 'Texto de la descripción de la imagen.'
-    }
+    },
+{
+    full: './assets/img/MuebleEspecial4.jpg',
+    thumb: './assets/img/MuebleEspecial4.jpg', 
+    title: 'Título de la imagen',
+    description: 'Texto de la descripción de la imagen.'
+    },
+{
+    full: './assets/img/MuebleEspecial2.jpg',
+    thumb: './assets/img/MuebleEspecial2.jpg', 
+    title: 'Título de la imagen',
+    description: 'Texto de la descripción de la imagen.'
+    },
+{
+    full: './assets/img/MuebleEspecial3.jpg',
+    thumb: './assets/img/MuebleEspecial3.jpg', 
+    title: 'Título de la imagen',
+    description: 'Texto de la descripción de la imagen.'
+    },   
 ]}
 ];
 
 // Método para mostrar la galería de una categoría
-
     $scope.showCategoryGallery = function(category) {
         $scope.selectedCategory = category;
         $scope.showGallery = true;
         $scope.currentImageIndex = 0; 
 
         // Mostrar solo la primera imagen
-
         setTimeout(function() {
             updateVisibleImage($scope.currentImageIndex);
         }, 100);
     };
 
     // Método para cambiar a la siguiente imagen
-
     $scope.nextImage = function() {
         if ($scope.selectedCategory && $scope.selectedCategory.images.length > 0) {
             $scope.currentImageIndex = ($scope.currentImageIndex + 1) % $scope.selectedCategory.images.length;
@@ -131,7 +192,6 @@ $scope.categories = [
     };
 
     // Función auxiliar para actualizar la imagen visible
-
     function updateVisibleImage(index) {
 
         var tabs = document.querySelectorAll('#gallery-container-' + $scope.selectedCategory.id + ' .tab');
@@ -145,7 +205,7 @@ $scope.categories = [
             tabs[index].classList.add('active-tab');
         }
 
-       //Fuccion que activa la miniatura
+       //Funcion que activa la miniatura
 
         var navLinks = document.querySelectorAll('#gallery-container-' + $scope.selectedCategory.id + '-nav a');
         for (var j = 0; j < navLinks.length; j++) {
@@ -155,8 +215,6 @@ $scope.categories = [
             navLinks[index].classList.add('active');
         }
     }
-
-    // Back para volver a las categorias
 
     $scope.backToCategories = function() {
         $scope.showGallery = false;
