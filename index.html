@@ -81,9 +81,7 @@
       <img ng-src="{{category.thumbnail}}" alt="{{category.name}}">
     </div>
   </div>
-
   <!-- Galería de las categorías -->
-  
   <div class="gallery-container" ng-show="showGallery">
     <div class="row">
       <div class="col-xs-12">
@@ -96,8 +94,8 @@
     
     <div id="gallery-container-{{selectedCategory.id}}" class="row gallery-content">
       <div class="col-md-8">
-        <div class="tab" ng-repeat="image in selectedCategory.images" id="tab{{$index+1}}" ng-class="{'active-tab': $index === 0}"> 
-          <a href="javascript:galleryTabber.next()" title="Click para ver la siguiente imagen">
+        <div class="tab" ng-repeat="image in selectedCategory.images" id="tab{{$index+1}}" ng-class="{'active-tab': $index === currentImageIndex}"> 
+          <a href="javascript:void(0)" ng-click="nextImage()" title="Click para ver la siguiente imagen">
             <img ng-src="{{image.full}}" alt="{{image.title}}" />
           </a>
           <p class="info"> 
@@ -110,8 +108,8 @@
       <div class="col-md-4">
         <ul id="gallery-container-{{selectedCategory.id}}-nav" class="gallery-nav">
           <li ng-repeat="image in selectedCategory.images">
-            <a href="#tab{{$index+1}}" ng-class="{'active': $index === 0}">
-              <img ng-src="{{image.thumb}}" alt="{{image.title}}" />
+            <a href="javascript:void(0)" ng-click="showImage($index)" ng-class="{'active': $index === currentImageIndex}">
+              <img ng-src="{{image.thumb || image.full}}" alt="{{image.title}}" />
             </a>
           </li>
         </ul>
